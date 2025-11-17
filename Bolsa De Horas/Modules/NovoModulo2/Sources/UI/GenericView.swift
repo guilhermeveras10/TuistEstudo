@@ -1,10 +1,5 @@
 import SwiftUI
 
-<<<<<<< HEAD
-struct {{ name }}View: View {
-    var body: some View {
-        Text("Módulo {{ name }} criado com Tuist ✨")
-=======
 public struct GenericView: View {
     @StateObject private var viewModel: ViewModel
 
@@ -53,6 +48,5 @@ public struct GenericView: View {
 private extension View {
     func eraseToAnyView() -> AnyView {
         AnyView(self)
->>>>>>> 24a51c5 (first commit)
     }
 }
