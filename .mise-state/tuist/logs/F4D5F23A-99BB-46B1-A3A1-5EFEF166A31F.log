@@ -1,0 +1,22 @@
+2025-11-25T14:16:00-0300 debug dev.tuist.cli : /usr/bin/xcrun swift -suppress-warnings -I /Users/guilherme/.local/share/mise/installs/tuist/4.106.3/bin -L /Users/guilherme/.local/share/mise/installs/tuist/4.106.3/bin -F /Users/guilherme/.local/share/mise/installs/tuist/4.106.3/bin -lProjectDescription -framework ProjectDescription '/Users/guilherme/Desktop/Mobiliza-ios/Bolsa De Horas/Tuist.swift' --tuist-dump
+2025-11-25T14:16:00-0300 debug dev.tuist.cli : TUIST_MANIFEST_START
+{"inspectOptions":{"redundantDependencies":{"ignoreTagsMatching":[]}},"project":{"tuist":{"installOptions":{"passthroughSwiftPackageManagerArguments":[]},"compatibleXcodeVersions":{"all":{}},"plugins":[],"generationOptions":{"staticSideEffectsWarningTargets":{"all":{}},"enforceExplicitDependencies":false,"additionalPackageResolutionArguments":[],"optionalAuthentication":false,"disableSandbox":true,"buildInsightsDisabled":false,"enableCaching":false,"disablePackageVersionLocking":false,"includeGenerateScheme":true,"resolveDependenciesWithSystemScm":false},"cacheOptions":{"keepSourceTargets":false,"profiles":{"profileByName":{},"defaultProfile":{"onlyExternal":{}}}}}},"url":"https:\/\/tuist.dev"}
+TUIST_MANIFEST_END
+
+2025-11-25T14:16:00-0300 debug dev.tuist.cli : /usr/bin/xcrun swift -suppress-warnings -I /Users/guilherme/.local/share/mise/installs/tuist/4.106.3/bin -L /Users/guilherme/.local/share/mise/installs/tuist/4.106.3/bin -F /Users/guilherme/.local/share/mise/installs/tuist/4.106.3/bin -lProjectDescription -framework ProjectDescription '/Users/guilherme/Desktop/Mobiliza-ios/Bolsa De Horas/Tuist/Templates/Clean/Clean.swift' --tuist-dump
+2025-11-25T14:16:00-0300 debug dev.tuist.cli : TUIST_MANIFEST_START
+{"items":[{"path":"Modules\/{{ name }}\/Sources\/Presentation\/{{ name }}View.swift","contents":{"file":{"_0":{"pathString":"Stubs\/View.stencil","type":"relativeToManifest"}}}}],"description":"Gera um módulo com arquitetura limpa","attributes":[{"required":{"_0":"name"}}]}
+TUIST_MANIFEST_END
+
+2025-11-25T14:16:00-0300 debug dev.tuist.cli : /usr/bin/xcrun swift -suppress-warnings -I /Users/guilherme/.local/share/mise/installs/tuist/4.106.3/bin -L /Users/guilherme/.local/share/mise/installs/tuist/4.106.3/bin -F /Users/guilherme/.local/share/mise/installs/tuist/4.106.3/bin -lProjectDescription -framework ProjectDescription '/Users/guilherme/Desktop/Mobiliza-ios/Bolsa De Horas/Tuist.swift' --tuist-dump
+2025-11-25T14:16:00-0300 debug dev.tuist.cli : TUIST_MANIFEST_START
+{"url":"https:\/\/tuist.dev","inspectOptions":{"redundantDependencies":{"ignoreTagsMatching":[]}},"project":{"tuist":{"cacheOptions":{"keepSourceTargets":false,"profiles":{"defaultProfile":{"onlyExternal":{}},"profileByName":{}}},"compatibleXcodeVersions":{"all":{}},"plugins":[],"generationOptions":{"includeGenerateScheme":true,"enableCaching":false,"disableSandbox":true,"buildInsightsDisabled":false,"optionalAuthentication":false,"resolveDependenciesWithSystemScm":false,"additionalPackageResolutionArguments":[],"enforceExplicitDependencies":false,"staticSideEffectsWarningTargets":{"all":{}},"disablePackageVersionLocking":false},"installOptions":{"passthroughSwiftPackageManagerArguments":[]}}}}
+TUIST_MANIFEST_END
+
+2025-11-25T14:16:00-0300 debug dev.tuist.cli : /usr/bin/xcrun swift -suppress-warnings -I /Users/guilherme/.local/share/mise/installs/tuist/4.106.3/bin -L /Users/guilherme/.local/share/mise/installs/tuist/4.106.3/bin -F /Users/guilherme/.local/share/mise/installs/tuist/4.106.3/bin -lProjectDescription -framework ProjectDescription '/Users/guilherme/Desktop/Mobiliza-ios/Bolsa De Horas/Tuist/Templates/Clean/Clean.swift' --tuist-dump
+2025-11-25T14:16:01-0300 debug dev.tuist.cli : TUIST_MANIFEST_START
+{"attributes":[{"required":{"_0":"name"}}],"items":[{"contents":{"file":{"_0":{"type":"relativeToManifest","pathString":"Stubs\/View.stencil"}}},"path":"Modules\/{{ name }}\/Sources\/Presentation\/{{ name }}View.swift"}],"description":"Gera um módulo com arquitetura limpa"}
+TUIST_MANIFEST_END
+
+2025-11-25T14:16:01-0300 debug dev.tuist.cli : Success alert: ✔ Success 
+  - Message: TerminalText(components: [Noora.TerminalText.Component.raw("Template "), Noora.TerminalText.Component.raw("Clean"), Noora.TerminalText.Component.raw(" was successfully generated")])
