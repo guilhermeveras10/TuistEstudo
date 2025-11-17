@@ -1,0 +1,10 @@
+import Foundation
+
+// MARK: {{ name }}FlowModel - adicione campos conforme necessário
+public class {{ name }}FlowModel: Equatable {
+    public var id: Int
+
+    public init(id: Int = 0) {
+        self.id = id
+    }
+}

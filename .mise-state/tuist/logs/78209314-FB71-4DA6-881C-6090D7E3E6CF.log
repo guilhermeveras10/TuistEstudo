@@ -1,0 +1,11 @@
+2025-11-24T18:36:04-0300 debug dev.tuist.cli : Using no concurrency limit for the cache's HTTP connections.
+2025-11-24T18:36:04-0300 debug dev.tuist.cli : Using cache profile onlyExternal
+2025-11-24T18:36:04-0300 notice dev.tuist.cli : is=section Loading and constructing the graph
+2025-11-24T18:36:04-0300 notice dev.tuist.cli : It might take a while if the cache is empty
+2025-11-24T18:36:04-0300 debug dev.tuist.cli : Error alert: ✖ Error 
+  - Message: TerminalText(components: [Noora.TerminalText.Component.raw(""), Noora.TerminalText.Component.raw("Manifest not found at path /Users/guilherme/Desktop/Mobiliza-ios/App"), Noora.TerminalText.Component.raw("")])
+  - Takeaways:
+    - TerminalText(components: [Noora.TerminalText.Component.raw("If the error is actionable, address it")])
+    - TerminalText(components: [Noora.TerminalText.Component.raw("If the error is not actionable, let\'s discuss it in the "), Noora.TerminalText.Component.link(title: "Troubleshooting & how to", href: "https://community.tuist.dev/c/troubleshooting-how-to/6"), Noora.TerminalText.Component.raw("")])
+    - TerminalText(components: [Noora.TerminalText.Component.raw("If you are very certain it\'s a bug, "), Noora.TerminalText.Component.link(title: "file an issue", href: "https://github.com/tuist/tuist"), Noora.TerminalText.Component.raw("")])
+    - TerminalText(components: [Noora.TerminalText.Component.raw("Check out the logs at "), Noora.TerminalText.Component.raw("/Users/guilherme/Desktop/Mobiliza-ios/.mise-state/tuist/logs/78209314-FB71-4DA6-881C-6090D7E3E6CF.log"), Noora.TerminalText.Component.raw("")])
