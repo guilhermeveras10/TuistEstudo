@@ -1,0 +1,11 @@
+import SwiftUI
+
+public enum {{ name }}Builder {
+    public static func make() -> some View {
+        let repository = {{ name }}RepositoryImpl()
+        let useCase = Get{{ name }}UseCase(repository: repository)
+        let viewModel = ViewModel(useCase: useCase)
+        // TODO: ajustar a montagem conforme dependências reais do módulo
+        return GenericView(viewModel: viewModel)
+    }
+}

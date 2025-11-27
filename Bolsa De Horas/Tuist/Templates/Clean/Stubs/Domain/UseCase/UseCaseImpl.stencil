@@ -1,0 +1,16 @@
+import Foundation
+import Combine
+
+public final class Get{{ name }}UseCase: {{ name }}UseCaseProtocol {
+    private let repository: {{ name }}RepositoryProtocol
+
+    public init(repository: {{ name }}RepositoryProtocol) {
+        self.repository = repository
+    }
+
+    public func execute() -> Get{{ name }}Return {
+        repository.get{{ name }}()
+            .map { $0 }
+            .eraseToAnyPublisher()
+    }
+}

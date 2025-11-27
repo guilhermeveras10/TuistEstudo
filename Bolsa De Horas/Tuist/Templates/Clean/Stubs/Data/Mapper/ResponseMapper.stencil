@@ -1,0 +1,13 @@
+import Foundation
+
+class {{ name }}Mapper {
+    func map(_ dto: {{ name }}DTO?) -> {{ name }} {
+        guard let dto = dto else {
+            // TODO: tratar dto nulo conforme a regra do domínio
+            return {{ name }}(id: 0)
+        }
+
+        // TODO: mapear outros campos quando existirem
+        return {{ name }}(id: dto.id ?? 0)
+    }
+}

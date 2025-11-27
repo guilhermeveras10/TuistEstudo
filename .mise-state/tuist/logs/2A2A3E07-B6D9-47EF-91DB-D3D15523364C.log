@@ -1,0 +1,14 @@
+2025-11-27T11:03:03-0300 debug dev.tuist.cli : /usr/bin/xcrun swift -suppress-warnings -I /Users/guilherme/.local/share/mise/installs/tuist/4.106.3/bin -L /Users/guilherme/.local/share/mise/installs/tuist/4.106.3/bin -F /Users/guilherme/.local/share/mise/installs/tuist/4.106.3/bin -lProjectDescription -framework ProjectDescription '/Users/guilherme/Desktop/TuistEstudo/Bolsa De Horas/Tuist.swift' --tuist-dump
+2025-11-27T11:03:04-0300 debug dev.tuist.cli : TUIST_MANIFEST_START
+{"inspectOptions":{"redundantDependencies":{"ignoreTagsMatching":[]}},"url":"https:\/\/tuist.dev","project":{"tuist":{"compatibleXcodeVersions":{"all":{}},"cacheOptions":{"profiles":{"profileByName":{},"defaultProfile":{"onlyExternal":{}}},"keepSourceTargets":false},"plugins":[],"installOptions":{"passthroughSwiftPackageManagerArguments":[]},"generationOptions":{"enforceExplicitDependencies":false,"enableCaching":false,"additionalPackageResolutionArguments":[],"buildInsightsDisabled":false,"includeGenerateScheme":true,"disablePackageVersionLocking":false,"resolveDependenciesWithSystemScm":false,"optionalAuthentication":false,"disableSandbox":true,"staticSideEffectsWarningTargets":{"all":{}}}}}}
+TUIST_MANIFEST_END
+
+2025-11-27T11:03:04-0300 debug dev.tuist.cli : /usr/bin/env which tuist-generate
+2025-11-27T11:03:04-0300 debug dev.tuist.cli : 
+2025-11-27T11:03:04-0300 debug dev.tuist.cli : Error alert: ✖ Error 
+  - Message: TerminalText(components: [Noora.TerminalText.Component.raw(""), Noora.TerminalText.Component.raw("The data couldn’t be read because it isn’t in the correct format."), Noora.TerminalText.Component.raw("")])
+  - Takeaways:
+    - TerminalText(components: [Noora.TerminalText.Component.raw("If the error is actionable, address it")])
+    - TerminalText(components: [Noora.TerminalText.Component.raw("If the error is not actionable, let\'s discuss it in the "), Noora.TerminalText.Component.link(title: "Troubleshooting & how to", href: "https://community.tuist.dev/c/troubleshooting-how-to/6"), Noora.TerminalText.Component.raw("")])
+    - TerminalText(components: [Noora.TerminalText.Component.raw("If you are very certain it\'s a bug, "), Noora.TerminalText.Component.link(title: "file an issue", href: "https://github.com/tuist/tuist"), Noora.TerminalText.Component.raw("")])
+    - TerminalText(components: [Noora.TerminalText.Component.raw("Check out the logs at "), Noora.TerminalText.Component.raw("/Users/guilherme/Desktop/TuistEstudo/.mise-state/tuist/logs/2A2A3E07-B6D9-47EF-91DB-D3D15523364C.log"), Noora.TerminalText.Component.raw("")])

@@ -1,0 +1,19 @@
+import Foundation
+import Combine
+import AgiNetwork
+
+public final class {{ name }}RepositoryImpl: {{ name }}RepositoryProtocol {
+    private var store: [{{ name }}DTO] = []
+    private let mapper = {{ name }}Mapper()
+
+    public init() {}
+
+    public func get{{ name }}() -> Get{{ name }}Return {
+        // TODO: substituir por chamada real de rede
+        let dto = store.first
+        let model = mapper.map(dto)
+        return Just(model)
+            .setFailureType(to: NetworkAPIError.self)
+            .eraseToAnyPublisher()
+    }
+}
