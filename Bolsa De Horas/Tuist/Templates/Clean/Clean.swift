@@ -9,11 +9,6 @@ let template = Template(
     ],
     items: [
         .file(
-<<<<<<< HEAD
-            path: "Modules/\(nameAttribute)/Sources/Presentation/\(nameAttribute)View.swift",
-            templatePath: "Stubs/View.stencil"
-        ),
-=======
             path: "Modules/\(nameAttribute)/Sources/Domain/Model/\(nameAttribute).swift",
             templatePath: "Stubs/Domain/Model/Response.stencil"
         ),
@@ -61,6 +56,5 @@ let template = Template(
             path: "Modules/\(nameAttribute)/Sources/\(nameAttribute)Builder.swift",
             templatePath: "Stubs/Builder.stencil"
         ),
->>>>>>> 24a51c5 (first commit)
     ]
 )
