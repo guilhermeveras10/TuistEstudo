@@ -22,10 +22,7 @@ let project = Project(
             buildableFolders: [
                 "Bolsa De Horas/Sources",
                 "Bolsa De Horas/Resources",
-<<<<<<< HEAD
-=======
                 "Modules",
->>>>>>> 24a51c5 (first commit)
             ],
             dependencies: [
                 .package(product: "Alamofire"),
