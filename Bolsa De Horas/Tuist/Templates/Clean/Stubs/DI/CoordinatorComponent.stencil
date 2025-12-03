@@ -1,0 +1,27 @@
+import ActionHandler
+import NeedleFoundation
+import SwiftUI
+import UIKit
+
+public protocol {{ name }}CoordinatorBuilder {
+    var coordinator: {{ name }}Coordinator { get }
+}
+
+public protocol {{ name }}CoordinatorDependency: Dependency {
+    var navigationController: UINavigationController { get }
+    var viewComponent: {{ name }}ViewBuilder { get }
+    var urlActionHandler: URLActionHandler { get }
+}
+
+public final class {{ name }}CoordinatorComponent:
+    Component<{{ name }}CoordinatorDependency>,
+    {{ name }}CoordinatorBuilder
+{
+    public var coordinator: {{ name }}Coordinator {
+        .init(
+            navigationController: dependency.navigationController,
+            featureView: dependency.viewComponent.featureView,
+            urlActionHandler: dependency.urlActionHandler
+        )
+    }
+}

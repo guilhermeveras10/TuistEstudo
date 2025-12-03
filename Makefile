@@ -12,6 +12,9 @@ TUIST_PROJECT_DIR ?= $(PWD_ABS)/Bolsa De Horas
 TUIST_PROJECT_NAME ?= Bolsa De Horas
 TUIST_XCODEPROJ := $(TUIST_PROJECT_DIR)/$(TUIST_PROJECT_NAME).xcodeproj
 TUIST_XCWORKSPACE := $(TUIST_PROJECT_DIR)/$(TUIST_PROJECT_NAME).xcworkspace
+NEEDLE_BIN ?= $(shell command -v needle 2>/dev/null)
+NEEDLE_OUTPUT ?= $(TUIST_PROJECT_DIR)/Modules/Anime/Sources/Presentation/Feature/NeedleGenerated.swift
+NEEDLE_SOURCES ?= $(TUIST_PROJECT_DIR)/Modules/Anime/Sources
 
 # Usa diretórios locais para evitar erros de permissão (podem ser sobrescritos externamente).
 MISE_CACHE_ROOT ?= $(PWD_ABS)/.mise-cache
@@ -108,6 +111,18 @@ module:
 		exit 1; \
 	fi; \
 	echo "✅ Módulo Clean '$(name)' criado em $(TUIST_PROJECT_DIR)/Modules/$(name)"
+
+.PHONY: needle-generate
+# Usage: make needle-generate [NEEDLE_OUTPUT=...] [NEEDLE_SOURCES=...]
+needle-generate:
+	@if [ -z "$(strip $(NEEDLE_BIN))" ]; then \
+		echo "❌ needle CLI não encontrado. Instale com 'brew install needle' ou defina NEEDLE_BIN com o caminho do binário."; \
+		exit 1; \
+	fi
+	@echo "🔧 Gerando arquivo do Needle em $(NEEDLE_OUTPUT)..."
+	@mkdir -p "$(dir $(NEEDLE_OUTPUT))"
+	@"$(NEEDLE_BIN)" generate "$(NEEDLE_OUTPUT)" "$(NEEDLE_SOURCES)"
+	@echo "✅ NeedleGenerated atualizado."
 
 # Garante que o mise esteja instalado. Faz uso do Homebrew, se necessário.
 install-mise:

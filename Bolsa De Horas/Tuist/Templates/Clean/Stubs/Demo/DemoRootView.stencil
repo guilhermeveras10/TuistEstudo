@@ -1,0 +1,14 @@
+import SwiftUI
+import {{ name }}
+
+struct DemoRootView: View {
+    var body: some View {
+        {{ name }}Builder.make()
+    }
+}
+
+struct DemoRootView_Previews: PreviewProvider {
+    static var previews: some View {
+        DemoRootView()
+    }
+}

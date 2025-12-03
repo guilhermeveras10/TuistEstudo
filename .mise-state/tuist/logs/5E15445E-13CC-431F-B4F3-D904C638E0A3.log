@@ -1,9 +1,0 @@
-2025-11-27T11:03:06-0300 debug dev.tuist.cli : /usr/bin/env which tuist-generate
-2025-11-27T11:03:06-0300 debug dev.tuist.cli : 
-2025-11-27T11:03:06-0300 debug dev.tuist.cli : Error alert: ✖ Error 
-  - Message: TerminalText(components: [Noora.TerminalText.Component.raw(""), Noora.TerminalText.Component.raw("The data couldn’t be read because it isn’t in the correct format."), Noora.TerminalText.Component.raw("")])
-  - Takeaways:
-    - TerminalText(components: [Noora.TerminalText.Component.raw("If the error is actionable, address it")])
-    - TerminalText(components: [Noora.TerminalText.Component.raw("If the error is not actionable, let\'s discuss it in the "), Noora.TerminalText.Component.link(title: "Troubleshooting & how to", href: "https://community.tuist.dev/c/troubleshooting-how-to/6"), Noora.TerminalText.Component.raw("")])
-    - TerminalText(components: [Noora.TerminalText.Component.raw("If you are very certain it\'s a bug, "), Noora.TerminalText.Component.link(title: "file an issue", href: "https://github.com/tuist/tuist"), Noora.TerminalText.Component.raw("")])
-    - TerminalText(components: [Noora.TerminalText.Component.raw("Check out the logs at "), Noora.TerminalText.Component.raw("/Users/guilherme/Desktop/TuistEstudo/.mise-state/tuist/logs/5E15445E-13CC-431F-B4F3-D904C638E0A3.log"), Noora.TerminalText.Component.raw("")])

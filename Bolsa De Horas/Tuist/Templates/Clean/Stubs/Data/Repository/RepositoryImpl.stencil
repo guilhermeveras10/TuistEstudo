@@ -1,19 +1,23 @@
 import Foundation
 import Combine
-import AgiNetwork
+import Alamofire
 
 public final class {{ name }}RepositoryImpl: {{ name }}RepositoryProtocol {
-    private var store: [{{ name }}DTO] = []
+    private let api: Session
     private let mapper = {{ name }}Mapper()
+    private let endpoint = URL(string: "https://jsonplaceholder.typicode.com/todos/1")!
 
-    public init() {}
+    public init(api: Session) {
+        self.api = api
+    }
 
     public func get{{ name }}() -> Get{{ name }}Return {
-        // TODO: substituir por chamada real de rede
-        let dto = store.first
-        let model = mapper.map(dto)
-        return Just(model)
-            .setFailureType(to: NetworkAPIError.self)
+        return api
+            .request(endpoint, method: .get)
+            .validate()
+            .publishDecodable(type: {{ name }}DTO.self)
+            .value()
+            .map(mapper.map)
             .eraseToAnyPublisher()
     }
 }
