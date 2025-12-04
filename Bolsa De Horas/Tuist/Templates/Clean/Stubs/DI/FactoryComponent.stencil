@@ -1,0 +1,18 @@
+import NeedleFoundation
+
+public protocol {{ name }}FactoryBuilder {
+    var viewModel: ViewModel { get }
+}
+
+public protocol {{ name }}FactoryDependency: Dependency {
+    var useCase: {{ name }}UseCaseProtocol { get }
+}
+
+public final class {{ name }}FactoryComponent:
+    Component<{{ name }}FactoryDependency>,
+    {{ name }}FactoryBuilder
+{
+    public var viewModel: ViewModel {
+        ViewModel(useCase: dependency.useCase)
+    }
+}

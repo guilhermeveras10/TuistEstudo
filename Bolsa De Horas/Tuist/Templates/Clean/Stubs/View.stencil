@@ -1,7 +1,0 @@
-import SwiftUI
-
-struct {{ name }}View: View {
-    var body: some View {
-        Text("Módulo {{ name }} criado com Tuist ✨")
-    }
-}

@@ -1,0 +1,25 @@
+import SwiftUI
+
+struct ContentView: View {
+    let startModule: () -> Void
+
+    var body: some View {
+        NavigationView {
+            VStack(spacing: 16) {
+                Text("Demo {{ name }}")
+                    .font(.title2)
+                Button("Iniciar módulo", action: startModule)
+                    .buttonStyle(.borderedProminent)
+                Spacer()
+            }
+            .padding()
+            .navigationBarTitle("DEMO", displayMode: .inline)
+        }
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView(startModule: {})
+    }
+}

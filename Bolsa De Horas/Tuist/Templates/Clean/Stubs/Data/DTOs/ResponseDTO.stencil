@@ -1,0 +1,6 @@
+import Foundation
+
+public struct {{ name }}DTO: Decodable {
+    public let id: Int?
+    // TODO: adicionar campos de resposta e conformidades necessárias
+}
