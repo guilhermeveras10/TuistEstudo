@@ -1,5 +1,5 @@
 import Utility
-import Anime
+import Cadastro
 import SwiftUI
 import UIKit
 
@@ -45,6 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func configureNavigationBarAppearance() {
         let appearance = UINavigationBarAppearance()
 
+        // Navbar compacta e com fundo azul.
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = UIColor.systemBlue
         appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
@@ -59,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func startModule() {
         if let navigatable = navigatable {
             let module =
-                AnimeModule(
+                CadastroModule(
                     component: .init(
                         _urlActionHandler: URLActionHandler.shared
                     )

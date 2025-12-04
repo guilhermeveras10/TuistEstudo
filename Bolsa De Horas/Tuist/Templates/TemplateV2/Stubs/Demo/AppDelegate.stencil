@@ -1,5 +1,5 @@
 import Utility
-import Anime
+import {{ name }}
 import SwiftUI
 import UIKit
 
@@ -59,7 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func startModule() {
         if let navigatable = navigatable {
             let module =
-                AnimeModule(
+                {{ name }}Module(
                     component: .init(
                         _urlActionHandler: URLActionHandler.shared
                     )
