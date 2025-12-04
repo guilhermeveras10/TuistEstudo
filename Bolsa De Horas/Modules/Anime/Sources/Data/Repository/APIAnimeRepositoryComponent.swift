@@ -2,17 +2,17 @@ import Foundation
 import NeedleFoundation
 import Alamofire
 
-public protocol AnimesRepositoryBuilder {
+public protocol APIAnimeRepositoryBuilder {
     var repository: AnimeRepositoryProtocol { get }
 }
 
-public protocol AnimesRepositoryDependency: Dependency {
+public protocol APIAnimeRepositoryDependency: Dependency {
     var api: Session { get }
 }
 
-public final class AnimesRepositoryComponent:
-    Component<AnimesRepositoryDependency>,
-    AnimesRepositoryBuilder
+public final class APIAnimeRepositoryComponent:
+    Component<APIAnimeRepositoryDependency>,
+    APIAnimeRepositoryBuilder
 {
     public var repository: AnimeRepositoryProtocol {
         APIAnimeRepositoryImpl(api: dependency.api)

@@ -1,10 +1,10 @@
 import Foundation
 
 // MARK: HomeFlowModel - adicione campos conforme necessário
-public class HomeFlowModel {
-    public var id: Int
+public class AnimeFlowModel {
+    public var anime: Anime?
 
-    public init(id: Int = 0) {
-        self.id = id
+    public init(anime: Anime? = nil) {
+        self.anime = anime
     }
 }

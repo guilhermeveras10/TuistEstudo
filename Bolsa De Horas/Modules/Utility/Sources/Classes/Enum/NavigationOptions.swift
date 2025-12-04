@@ -1,7 +1,3 @@
-//
-//  Untitled.swift
-//  Bolsa De Horas
-//
-//  Created by Guilherme Duarte on 03/12/25.
-//
-
+public enum NavigationOptions {
+    case back, close, confirmClose, confirmClosePixBlocked, confirmCloseRefund
+}

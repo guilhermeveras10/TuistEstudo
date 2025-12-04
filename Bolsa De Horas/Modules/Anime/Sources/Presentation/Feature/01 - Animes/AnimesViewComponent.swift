@@ -24,10 +24,15 @@ AnimesViewDependency
 AnimesViewBuilder
 {
     var view: any View {
-        InvoicesV2View(viewModel: viewModel)
+        AnimesView(viewModel: self.viewModel)
     }
 
     var viewModel: AnimesViewModelImpl {
-        .init(navigate: dependency.navigate, apiAnimeUseCase: dependency.useCaseComponent.apiAnimeUseCaseComponent.useCase, animeViewStateFactory: dependency.factoryComponent.animeViewStateFactoryComponent.factory, flowModel: dependency.flowModel)
+        .init(
+            navigate: dependency.navigate,
+            apiAnimeUseCase: dependency.useCaseComponent.apiAnimeUseCaseComponent.useCase,
+            animeViewStateFactory: dependency.factoryComponent.animeViewStateFactoryComponent.factory,
+            flowModel: dependency.flowModel
+        )
     }
 }

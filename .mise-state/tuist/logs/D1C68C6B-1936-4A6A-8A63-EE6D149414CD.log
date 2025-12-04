@@ -1,0 +1,102 @@
+2025-12-03T15:05:11-0300 debug dev.tuist.cli : /usr/bin/xcrun swift -suppress-warnings -I /Users/guilherme/.local/share/mise/installs/tuist/4.106.3/bin -L /Users/guilherme/.local/share/mise/installs/tuist/4.106.3/bin -F /Users/guilherme/.local/share/mise/installs/tuist/4.106.3/bin -lProjectDescription -framework ProjectDescription '/Users/guilherme/Desktop/TuistEstudo/Bolsa De Horas/Tuist.swift' --tuist-dump
+2025-12-03T15:05:11-0300 debug dev.tuist.cli : TUIST_MANIFEST_START
+{"url":"https:\/\/tuist.dev","inspectOptions":{"redundantDependencies":{"ignoreTagsMatching":[]}},"project":{"tuist":{"plugins":[],"installOptions":{"passthroughSwiftPackageManagerArguments":[]},"cacheOptions":{"keepSourceTargets":false,"profiles":{"profileByName":{},"defaultProfile":{"onlyExternal":{}}}},"generationOptions":{"enforceExplicitDependencies":false,"resolveDependenciesWithSystemScm":false,"buildInsightsDisabled":false,"includeGenerateScheme":true,"enableCaching":false,"disablePackageVersionLocking":false,"optionalAuthentication":false,"staticSideEffectsWarningTargets":{"all":{}},"additionalPackageResolutionArguments":[],"disableSandbox":true},"compatibleXcodeVersions":{"all":{}}}}}
+TUIST_MANIFEST_END
+
+2025-12-03T15:05:11-0300 debug dev.tuist.cli : /usr/bin/xcrun swift -suppress-warnings -I /Users/guilherme/.local/share/mise/installs/tuist/4.106.3/bin -L /Users/guilherme/.local/share/mise/installs/tuist/4.106.3/bin -F /Users/guilherme/.local/share/mise/installs/tuist/4.106.3/bin -lProjectDescription -framework ProjectDescription '/Users/guilherme/Desktop/TuistEstudo/Bolsa De Horas/Tuist.swift' --tuist-dump
+2025-12-03T15:05:11-0300 debug dev.tuist.cli : TUIST_MANIFEST_START
+{"inspectOptions":{"redundantDependencies":{"ignoreTagsMatching":[]}},"url":"https:\/\/tuist.dev","project":{"tuist":{"generationOptions":{"disablePackageVersionLocking":false,"optionalAuthentication":false,"includeGenerateScheme":true,"enableCaching":false,"buildInsightsDisabled":false,"disableSandbox":true,"resolveDependenciesWithSystemScm":false,"additionalPackageResolutionArguments":[],"enforceExplicitDependencies":false,"staticSideEffectsWarningTargets":{"all":{}}},"cacheOptions":{"profiles":{"profileByName":{},"defaultProfile":{"onlyExternal":{}}},"keepSourceTargets":false},"plugins":[],"installOptions":{"passthroughSwiftPackageManagerArguments":[]},"compatibleXcodeVersions":{"all":{}}}}}
+TUIST_MANIFEST_END
+
+2025-12-03T15:05:11-0300 debug dev.tuist.cli : Using no concurrency limit for the cache's HTTP connections.
+2025-12-03T15:05:11-0300 debug dev.tuist.cli : Using cache profile onlyExternal
+2025-12-03T15:05:11-0300 notice dev.tuist.cli : is=section Loading and constructing the graph
+2025-12-03T15:05:11-0300 notice dev.tuist.cli : It might take a while if the cache is empty
+2025-12-03T15:05:11-0300 debug dev.tuist.cli : Transforming project Bolsa De Horas: Deleting /Derived directory
+2025-12-03T15:05:11-0300 debug dev.tuist.cli : Transforming project Bolsa De Horas: Synthesizing resource accessors
+2025-12-03T15:05:11-0300 debug dev.tuist.cli : Transforming project Bolsa De Horas: Configuring 'disable show environment vars in script' in project targets' script phases
+2025-12-03T15:05:11-0300 debug dev.tuist.cli : Transforming project Bolsa De Horas: Generating bundles for libraries'
+2025-12-03T15:05:11-0300 debug dev.tuist.cli : Transforming project Bolsa De Horas: Auto-generating project schemes
+2025-12-03T15:05:11-0300 debug dev.tuist.cli : Transforming project Bolsa De Horas: Synthesizing Info.plist
+2025-12-03T15:05:11-0300 debug dev.tuist.cli : Transforming project Bolsa De Horas: Synthesizing entitlement files'
+2025-12-03T15:05:11-0300 debug dev.tuist.cli : Transforming project Bolsa De Horas: Synthesizing privacy manifest files'
+2025-12-03T15:05:11-0300 debug dev.tuist.cli : Transforming project Bolsa De Horas: Generating xcshareddata/IDETemplateMacros.plist
+2025-12-03T15:05:11-0300 debug dev.tuist.cli : Transforming workspace Bolsa De Horas: Signing the workspace
+2025-12-03T15:05:11-0300 debug dev.tuist.cli : Transforming workspace Bolsa De Horas: Including .xcodesample.plist
+2025-12-03T15:05:11-0300 debug dev.tuist.cli : Transforming workspace Bolsa De Horas: Generating xcshareddata/IDETemplateMacros.plist
+2025-12-03T15:05:11-0300 debug dev.tuist.cli : Transforming graph Bolsa De Horas: Mapping MODULE_MAP build setting to -fmodule-map-file compiler flag
+2025-12-03T15:05:11-0300 debug dev.tuist.cli : Transforming graph Bolsa De Horas: Aligning external target platforms with locals'
+2025-12-03T15:05:11-0300 debug dev.tuist.cli : Transforming graph Bolsa De Horas: Tree-shaking orphan external targets (e.g. test targets)
+2025-12-03T15:05:11-0300 debug dev.tuist.cli : Transforming graph Bolsa De Horas: Tree-shaking nodes
+2025-12-03T15:05:11-0300 debug dev.tuist.cli : Transforming graph Bolsa De Horas: Tree-shaking nodes
+2025-12-03T15:05:11-0300 debug dev.tuist.cli : /usr/bin/xcrun swift --version
+2025-12-03T15:05:11-0300 debug dev.tuist.cli : Apple Swift version 6.2 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
+Target: arm64-apple-macosx26.0
+
+2025-12-03T15:05:11-0300 info dev.tuist.cli : Using cache binaries for the following targets: 
+2025-12-03T15:05:11-0300 debug dev.tuist.cli : Transforming graph Bolsa De Horas: Tree-shaking nodes
+2025-12-03T15:05:11-0300 debug dev.tuist.cli : Transforming graph Bolsa De Horas: Aligning workspace projects with the graph's
+2025-12-03T15:05:11-0300 debug dev.tuist.cli : Transforming graph Bolsa De Horas: Auto-generating workspace scheme
+2025-12-03T15:05:11-0300 debug dev.tuist.cli : /usr/bin/xcrun swift -suppress-warnings -I /Users/guilherme/.local/share/mise/installs/tuist/4.106.3/bin -L /Users/guilherme/.local/share/mise/installs/tuist/4.106.3/bin -F /Users/guilherme/.local/share/mise/installs/tuist/4.106.3/bin -lProjectDescription -framework ProjectDescription '/Users/guilherme/Desktop/TuistEstudo/Bolsa De Horas/Tuist.swift' --tuist-dump
+2025-12-03T15:05:12-0300 debug dev.tuist.cli : TUIST_MANIFEST_START
+{"url":"https:\/\/tuist.dev","inspectOptions":{"redundantDependencies":{"ignoreTagsMatching":[]}},"project":{"tuist":{"installOptions":{"passthroughSwiftPackageManagerArguments":[]},"plugins":[],"compatibleXcodeVersions":{"all":{}},"generationOptions":{"disableSandbox":true,"disablePackageVersionLocking":false,"resolveDependenciesWithSystemScm":false,"enforceExplicitDependencies":false,"enableCaching":false,"staticSideEffectsWarningTargets":{"all":{}},"additionalPackageResolutionArguments":[],"buildInsightsDisabled":false,"optionalAuthentication":false,"includeGenerateScheme":true},"cacheOptions":{"profiles":{"profileByName":{},"defaultProfile":{"onlyExternal":{}}},"keepSourceTargets":false}}}}
+TUIST_MANIFEST_END
+
+2025-12-03T15:05:12-0300 debug dev.tuist.cli : xcode-select -p
+2025-12-03T15:05:12-0300 debug dev.tuist.cli : /Applications/Xcode.app/Contents/Developer
+
+2025-12-03T15:05:12-0300 notice dev.tuist.cli : is=section Generating workspace Bolsa De Horas.xcworkspace
+2025-12-03T15:05:12-0300 notice dev.tuist.cli : Generating project Bolsa De Horas
+2025-12-03T15:05:12-0300 debug dev.tuist.cli : Side effect: delete directory /Users/guilherme/Desktop/TuistEstudo/Bolsa De Horas/Derived/InfoPlists
+2025-12-03T15:05:12-0300 debug dev.tuist.cli : Side effect: delete directory /Users/guilherme/Desktop/TuistEstudo/Bolsa De Horas/Derived/Sources
+2025-12-03T15:05:12-0300 debug dev.tuist.cli : Side effect: create file /Users/guilherme/Desktop/TuistEstudo/Bolsa De Horas/Derived/Sources/TuistAssets+BolsaDeHoras.swift
+2025-12-03T15:05:12-0300 debug dev.tuist.cli : Side effect: create file /Users/guilherme/Desktop/TuistEstudo/Bolsa De Horas/Derived/Sources/TuistBundle+BolsaDeHoras.swift
+2025-12-03T15:05:12-0300 debug dev.tuist.cli : Side effect: create file /Users/guilherme/Desktop/TuistEstudo/Bolsa De Horas/Derived/InfoPlists/Bolsa De HorasTests-Info.plist
+2025-12-03T15:05:12-0300 debug dev.tuist.cli : Side effect: create file /Users/guilherme/Desktop/TuistEstudo/Bolsa De Horas/Derived/InfoPlists/AnimeDemo-Info.plist
+2025-12-03T15:05:12-0300 debug dev.tuist.cli : Side effect: create file /Users/guilherme/Desktop/TuistEstudo/Bolsa De Horas/Derived/InfoPlists/Anime-Info.plist
+2025-12-03T15:05:12-0300 debug dev.tuist.cli : Side effect: create file /Users/guilherme/Desktop/TuistEstudo/Bolsa De Horas/Derived/InfoPlists/Utility-Info.plist
+2025-12-03T15:05:12-0300 debug dev.tuist.cli : Side effect: create file /Users/guilherme/Desktop/TuistEstudo/Bolsa De Horas/Derived/InfoPlists/Bolsa De Horas-Info.plist
+2025-12-03T15:05:12-0300 debug dev.tuist.cli : Side effect: create file /Users/guilherme/Desktop/TuistEstudo/Bolsa De Horas/Bolsa De Horas.xcworkspace/.tuist-generated
+2025-12-03T15:05:12-0300 debug dev.tuist.cli : Side effect: delete file /Users/guilherme/Desktop/TuistEstudo/Bolsa De Horas/Bolsa De Horas.xcworkspace/.xcodesamplecode.plist
+2025-12-03T15:05:12-0300 notice dev.tuist.cli : Resolving package dependencies using xcodebuild
+2025-12-03T15:05:12-0300 debug dev.tuist.cli : xcodebuild -resolvePackageDependencies -workspace '/Users/guilherme/Desktop/TuistEstudo/Bolsa De Horas/Bolsa De Horas.xcworkspace' -list
+2025-12-03T15:05:13-0300 debug dev.tuist.logger : Command line invocation:
+    
+2025-12-03T15:05:13-0300 debug dev.tuist.logger : /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -resolvePackageDependencies -workspace "/Users/guilherme/Desktop/TuistEstudo/Bolsa De Horas/Bolsa De Horas.xcworkspace" -list
+
+
+2025-12-03T15:05:13-0300 debug dev.tuist.logger : Resolve Package Graph
+2025-12-03T15:05:13-0300 debug dev.tuist.logger : 
+
+2025-12-03T15:05:15-0300 debug dev.tuist.logger : 
+
+2025-12-03T15:05:15-0300 debug dev.tuist.logger : 
+Resolved source packages:
+  Alamofire: https://github.com/Alamofire/Alamofire.git @ 5.10.2
+  NeedleFoundation: https://github.com/uber/needle.git @ 0.25.1
+
+
+2025-12-03T15:05:15-0300 debug dev.tuist.logger : Information about workspace "Bolsa De Horas":
+    Schemes:
+        Alamofire
+        Alamofire-Package
+
+2025-12-03T15:05:15-0300 debug dev.tuist.logger :         AlamofireDynamic
+        Anime
+        Bolsa De Horas
+        Bolsa De Horas-Workspace
+        Generate Project
+        Utility
+
+
+2025-12-03T15:05:15-0300 debug dev.tuist.cli : /usr/bin/open '/Users/guilherme/Desktop/TuistEstudo/Bolsa De Horas/Bolsa De Horas.xcworkspace'
+2025-12-03T15:05:15-0300 debug dev.tuist.cli : 
+2025-12-03T15:05:15-0300 notice dev.tuist.cli : Total time taken: 3.794s
+2025-12-03T15:05:15-0300 debug dev.tuist.cli : Warning alert: ! Warning 
+  - Messages:
+    - (Noora.TerminalText(components: [Noora.TerminalText.Component.raw(""), Noora.TerminalText.Component.raw("Invalid product name \'Bolsa De HorasTests\'. This string must contain only alphanumeric (A-Z,a-z,0-9), period (.), hyphen (-), and underscore (_) characters."), Noora.TerminalText.Component.raw("")]), takeaway: nil)
+    - (Noora.TerminalText(components: [Noora.TerminalText.Component.raw(""), Noora.TerminalText.Component.raw("Invalid product name \'Bolsa De Horas\'. This string must contain only alphanumeric (A-Z,a-z,0-9), period (.), hyphen (-), and underscore (_) characters."), Noora.TerminalText.Component.raw("")]), takeaway: nil)
+    - (Noora.TerminalText(components: [Noora.TerminalText.Component.raw(""), Noora.TerminalText.Component.raw("Package \'Alamofire\' has been linked from target \'Anime\' and target \'Bolsa De Horas\', it is a static product so may introduce unwanted side effects."), Noora.TerminalText.Component.raw("")]), takeaway: nil)
+    - (Noora.TerminalText(components: [Noora.TerminalText.Component.raw(""), Noora.TerminalText.Component.raw("Package \'NeedleFoundation\' has been linked from target \'Anime\' and target \'Bolsa De Horas\', it is a static product so may introduce unwanted side effects."), Noora.TerminalText.Component.raw("")]), takeaway: nil)
+2025-12-03T15:05:15-0300 debug dev.tuist.cli : Success alert: ✔ Success 
+  - Message: TerminalText(components: [Noora.TerminalText.Component.raw("Project generated.")])

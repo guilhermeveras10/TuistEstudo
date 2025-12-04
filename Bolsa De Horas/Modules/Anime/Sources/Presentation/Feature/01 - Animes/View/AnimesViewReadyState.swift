@@ -1,16 +1,22 @@
 import SwiftUI
 
 extension AnimesView {
-    @ViewBuilder
-    func readyState(onAction: @escaping () -> Void) -> some View {
-        HStack(spacing: 8) {
-            Image(systemName: "checkmark.circle")
-                .foregroundColor(.green)
-            Text("Pronto")
-                .foregroundColor(.secondary)
-            Spacer()
-            Button("Atualizar", action: onAction)
-                .buttonStyle(.bordered)
+    func readyState() -> some View {
+        let items = viewModel.readyViewState ?? []
+        return List {
+            ForEach(items, id: \.animeName) { item in
+                HStack(spacing: 12) {
+                    // Placeholder de thumbnail pode ser adicionado depois
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(item.animeName)
+                            .font(.headline)
+                            .foregroundColor(.primary)
+                    }
+                    Spacer()
+                }
+                .contentShape(Rectangle())
+            }
         }
+        .listStyle(.plain)
     }
 }

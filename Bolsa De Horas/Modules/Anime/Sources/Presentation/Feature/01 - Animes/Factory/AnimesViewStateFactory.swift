@@ -1,27 +1,13 @@
 import SwiftUI
 
-public class AnimeViewStateFactory {
+public class AnimesViewStateFactory {
     public init() {}
 
     public func create(
         animes: [Anime]
-    ) -> InvoicesV2ViewState {
-        var grouped = groupedByYear(invoices)
-
-        if typeElement == .future {
-            for (year, invoiceList) in grouped {
-                grouped[year] = invoiceList.reversed()
-            }
+    ) -> [AnimesViewState] {
+        animes.map {
+            return AnimesViewState(animeName: $0.title)
         }
-
-        let years = sortedYears(from: grouped, typeElement: typeElement)
-
-        return .init(
-            invoices: invoices,
-            sortedYears: years,
-            years: grouped,
-            shouldShowFooter: invoices.count > Constants
-                .minItensToScroll ? true : false
-        )
     }
 }

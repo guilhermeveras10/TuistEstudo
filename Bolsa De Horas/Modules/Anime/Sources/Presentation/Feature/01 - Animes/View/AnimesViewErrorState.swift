@@ -1,23 +1,18 @@
 import SwiftUI
 
 extension AnimesView {
-    @ViewBuilder
-    func errorState(message: String, onRetry: @escaping () -> Void) -> some View {
-        VStack(alignment: .leading, spacing: 8) {
-            HStack(spacing: 8) {
-                Image(systemName: "exclamationmark.triangle.fill")
-                    .foregroundColor(.orange)
-                Text("Ocorreu um erro")
-                    .foregroundColor(.primary)
-            }
-            Text(message)
-                .font(.footnote)
+    func errorState() -> some View {
+        VStack(spacing: 12) {
+            Text("Ocorreu um erro ao carregar os animes.")
+                .multilineTextAlignment(.center)
                 .foregroundColor(.secondary)
-                .lineLimit(3)
-
-            Button("Tentar novamente", action: onRetry)
-                .buttonStyle(.borderedProminent)
+            Button("Tentar novamente") {
+                // Reaproveita o ciclo de vida: onAppear chama loadAnimes()
+                // Para forçar um novo carregamento, podemos simular uma reaparição:
+                // Alternativamente, você pode expor um método `reload()` no ViewModel.
+                viewModel.onAppear()
+            }
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding()
     }
 }

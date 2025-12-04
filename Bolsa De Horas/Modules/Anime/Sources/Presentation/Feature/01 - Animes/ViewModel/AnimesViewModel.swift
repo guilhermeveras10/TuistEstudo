@@ -1,8 +1,8 @@
 import Utility
 
 protocol AnimesViewModel: LifecycleViewModel {
-    var readyViewState: AnimeViewState? { get }
-    var state: AnimesViewModelImpl.State? { get }
+    var readyViewState: [AnimesViewState]? { get }
+    var state: AnimesViewModelImpl.State { get }
     
     func back()
     func close()

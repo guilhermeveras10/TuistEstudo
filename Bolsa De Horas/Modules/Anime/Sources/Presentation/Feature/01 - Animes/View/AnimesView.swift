@@ -1,55 +1,21 @@
+import Utility
 import SwiftUI
 
-public struct AnimesView: View {
-    @StateObject private var viewModel: ViewModel
+struct AnimesView<T: AnimesViewModel>: View {
+    @StateObject var viewModel: T
 
-    public init(viewModel: ViewModel) {
-        _viewModel = StateObject(wrappedValue: viewModel)
-    }
-
-    public var body: some View {
-        VStack(spacing: 16) {
-            TextField("Entrada generica", text: $viewModel.inputText)
-                .textFieldStyle(.roundedBorder)
-                .textInputAutocapitalization(.none)
-                // TODO: substituir nomes de campos conforme necessario
-
-            Button("Executar", action: viewModel.onAction)
-                .buttonStyle(.borderedProminent)
-                .disabled(isLoading)
-                // TODO: ajustar acao/botao conforme caso de uso
-
-            stateView
-
-            Spacer()
+    var body: some View {
+        BaseView(viewModel: viewModel) { viewModel in
+            switch viewModel.state {
+            case .LOADING:
+                loadingState()
+            case .READY:
+                readyState()
+            case .ERROR:
+                errorState()
+            }
         }
-        .padding()
-    }
-
-    @ViewBuilder
-    private var stateView: some View {
-        switch viewModel.state {
-        case .idle, .success:
-            readyState(onAction: viewModel.onAction)
-        case .loading:
-            loadingState()
-        case .error(let message):
-            errorState(message: message, onRetry: viewModel.onAction)
-        }
-    }
-
-    private var isLoading: Bool {
-        if case .loading = viewModel.state { return true }
-        return false
+        Spacer()
     }
 }
 
-public extension HomeView {
-    static func preview(viewState: ViewState = .idle) -> HomeView {
-        let repository = APIAnimeRepositoryImpl()
-        let useCase = APIAnimeUseCase(repository: repository)
-        let viewModel = ViewModel(useCase: useCase)
-        viewModel.state = viewState
-        return HomeView(viewModel: viewModel)
-    }
-}

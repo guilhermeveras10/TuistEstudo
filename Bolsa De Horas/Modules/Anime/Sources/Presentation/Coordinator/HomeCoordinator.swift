@@ -5,14 +5,14 @@ import SwiftUI
 import UIKit
 
 public final class HomeCoordinator {
-    public let navigationController: UINavigationController
-    private let featureView: any View
-    private let urlActionHandler: URLActionHandler
+    let navigationController: UINavigationController
+    let featureView: any View
+    let urlActionHandler: URLActionHandler
 
     public init(
         navigationController: UINavigationController,
-        featureView: any View = HomeBuilder.make(),
-        urlActionHandler: URLActionHandler = .shared
+        featureView: any View,
+        urlActionHandler: URLActionHandler
     ) {
         self.navigationController = navigationController
         self.featureView = featureView
@@ -30,8 +30,7 @@ public final class HomeCoordinator {
             animated: true
         )
     }
-
-    @discardableResult
+    
     public func navigateToDeeplink(_ deepLink: URL) -> Bool {
         urlActionHandler.handle(url: deepLink)
     }

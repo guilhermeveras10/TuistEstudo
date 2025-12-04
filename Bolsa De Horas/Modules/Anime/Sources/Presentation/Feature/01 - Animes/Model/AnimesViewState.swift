@@ -1,6 +1,6 @@
 import SwiftUI
 
-public class AnimeViewState: ObservableObject {
+public class AnimesViewState: ObservableObject {
     @Published var animeName: String
 
     init(

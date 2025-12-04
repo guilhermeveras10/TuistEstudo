@@ -1,7 +1,7 @@
 import NeedleFoundation
 
 public protocol AnimeViewStateFactoryBuilder {
-    var factory: AnimeViewStateFactory { get }
+    var factory: AnimesViewStateFactory { get }
 }
 
 public protocol AnimeViewStateFactoryDependency: Dependency {}
@@ -10,7 +10,7 @@ public class AnimeViewStateFactoryComponent:
     Component<AnimeViewStateFactoryDependency>,
     AnimeViewStateFactoryBuilder
 {
-    public var factory: AnimeViewStateFactory {
-        AnimeViewStateFactory()
+    public var factory: AnimesViewStateFactory {
+        AnimesViewStateFactory()
     }
 }

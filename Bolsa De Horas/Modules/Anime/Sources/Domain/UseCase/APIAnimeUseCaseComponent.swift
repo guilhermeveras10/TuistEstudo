@@ -5,7 +5,7 @@ public protocol APIAnimeUseCaseBuilder {
 }
 
 public protocol APIAnimeUseCaseDepedency: Dependency {
-    var repositoryComponent: CreditCardInvoicesV2RepositoryBuilder { get }
+    var repositoryComponent: AnimeRepositoryBuilder { get }
 }
 
 public class APIAnimeUseCaseComponent:
@@ -15,7 +15,7 @@ public class APIAnimeUseCaseComponent:
     public var useCase: APIAnimeUseCase {
         .init(
             repository: dependency.repositoryComponent
-                .getInvoicesRepositoryComponent.repository
+                .apiAnimeRepositoryBuilder.repository
         )
     }
 }
