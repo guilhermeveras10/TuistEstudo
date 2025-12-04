@@ -2,25 +2,25 @@ import Utility
 import NeedleFoundation
 import Foundation
 
-public final class AnimeModule {
+public final class CadastroModule {
     /// Identificador de action específico deste módulo (ex.: usado em deeplinks).
     public var identifierAction: String {
-        ActionIdentifier.actionAnime.rawValue
+        ActionIdentifier.actionCadastro.rawValue
     }
 
-    public let rootComponent: AnimeComponent
+    public let rootComponent: CadastroComponent
 
     public init(
-        component: AnimeComponent
+        component: CadastroComponent
     ) {
         rootComponent = component
     }
 }
 
-extension AnimeModule: FeatureModule {
+extension CadastroModule: FeatureModule {
     public func isTransitionAvailable(for key: String) -> Bool {
         switch key {
-        case ActionIdentifier.actionAnime.rawValue:
+        case ActionIdentifier.actionCadastro.rawValue:
             return true
         default:
             return false

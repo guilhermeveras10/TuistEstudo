@@ -1,0 +1,12 @@
+import SwiftUI
+
+public final class {{ name }}sViewStateFactory {
+    public init() {}
+
+    public func create(
+        items: [{{ name }}]
+    ) -> [{{ name }}sViewState] {
+        items.map { {{ name }}sViewState(title: $0.title) }
+    }
+}
+

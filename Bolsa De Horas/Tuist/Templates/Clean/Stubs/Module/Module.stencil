@@ -2,25 +2,25 @@ import Utility
 import NeedleFoundation
 import Foundation
 
-public final class AnimeModule {
+public final class {{ name }}Module {
     /// Identificador de action específico deste módulo (ex.: usado em deeplinks).
     public var identifierAction: String {
-        ActionIdentifier.actionAnime.rawValue
+        ActionIdentifier.action{{ name }}.rawValue
     }
 
-    public let rootComponent: AnimeComponent
+    public let rootComponent: {{ name }}Component
 
     public init(
-        component: AnimeComponent
+        component: {{ name }}Component
     ) {
         rootComponent = component
     }
 }
 
-extension AnimeModule: FeatureModule {
+extension {{ name }}Module: FeatureModule {
     public func isTransitionAvailable(for key: String) -> Bool {
         switch key {
-        case ActionIdentifier.actionAnime.rawValue:
+        case ActionIdentifier.action{{ name }}.rawValue:
             return true
         default:
             return false
@@ -40,7 +40,7 @@ extension AnimeModule: FeatureModule {
             view,
             animated: true,
             options: [],
-            presentationStyle: .fullScreen,
+            presentationStyle: .currentContext,
             completion: nil
         )
     }

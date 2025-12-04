@@ -1,0 +1,17 @@
+import NeedleFoundation
+
+public protocol {{ name }}RepositoryBuilder {
+    var api{{ name }}RepositoryBuilder: API{{ name }}RepositoryBuilder { get }
+}
+
+public protocol {{ name }}RepositoryDependency: Dependency {}
+
+public final class {{ name }}RepositoryComponent:
+    Component<{{ name }}RepositoryDependency>,
+    {{ name }}RepositoryBuilder
+{
+    public var api{{ name }}RepositoryBuilder: API{{ name }}RepositoryBuilder {
+        API{{ name }}RepositoryComponent(parent: self)
+    }
+}
+

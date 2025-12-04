@@ -1,0 +1,81 @@
+import Foundation
+import Combine
+
+public final class {{ name }}sViewModelImpl: {{ name }}sViewModel {
+    // MARK: - Properties required by {{ name }}sViewModel
+    
+    @Published var readyViewState: [{{ name }}sViewState]?
+    @Published var state: State = .LOADING
+    
+    // MARK: - Private Properties
+    
+    private let api{{ name }}UseCase: API{{ name }}UseCase
+    private let viewStateFactory: {{ name }}sViewStateFactory
+    private let navigate: PassthroughSubject<{{ name }}Navigate, Never>
+    private var cancellables: Set<AnyCancellable> = []
+    private let flowModel: {{ name }}FlowModel
+    
+    private var items: [{{ name }}]?
+
+    public init(
+        navigate: PassthroughSubject<{{ name }}Navigate, Never>,
+        api{{ name }}UseCase: API{{ name }}UseCase,
+        viewStateFactory: {{ name }}sViewStateFactory,
+        flowModel: {{ name }}FlowModel
+    ) {
+        self.navigate = navigate
+        self.api{{ name }}UseCase = api{{ name }}UseCase
+        self.viewStateFactory = viewStateFactory
+        self.flowModel = flowModel
+    }
+
+    // MARK: - LifecycleViewModel
+    
+    public func onAppear() {
+        loadItems()
+    }
+    
+    public func onDisappear() {
+        // Add cleanup if needed
+    }
+    
+    // MARK: - {{ name }}sViewModel actions
+    
+    func back() {
+        navigate.send(.goBack)
+    }
+    
+    func close() {
+        navigate.send(.dismiss)
+    }
+    
+    func openURL(_ deepLink: String) {
+        guard let url = URL(string: deepLink) else { return }
+        navigate.send(.navigateToModule(url))
+    }
+    
+    // MARK: - Private
+    
+    private func loadItems() {
+        state = .LOADING
+        api{{ name }}UseCase.execute()
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] completion in
+                guard let self else { return }
+                if case .failure = completion {
+                    self.state = .ERROR
+                }
+            } receiveValue: { [weak self] page in
+                guard let self else { return }
+                self.items = page.items
+                self.loadState()
+            }
+            .store(in: &cancellables)
+    }
+    
+    private func loadState() {
+        guard let items else { return }
+        readyViewState = viewStateFactory.create(items: items)
+        state = .READY
+    }
+}

@@ -1,0 +1,8 @@
+extension {{ name }}sViewModelImpl {
+    enum State {
+        case LOADING
+        case READY
+        case ERROR
+    }
+}
+

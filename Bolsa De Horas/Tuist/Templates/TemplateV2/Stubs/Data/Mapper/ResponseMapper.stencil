@@ -1,0 +1,25 @@
+import Foundation
+import Utility
+
+/// Mapeia um DTO para o modelo de domínio {{ name }}.
+enum {{ name }}Mapper: Mapper {
+    typealias Input = {{ name }}DTO
+    typealias Output = {{ name }}
+
+    static func map(input: {{ name }}DTO?) -> {{ name }} {
+        guard let dto = input else {
+            return .init(
+                id: UUID().uuidString,
+                title: "",
+                details: ""
+            )
+        }
+
+        return .init(
+            id: dto.id.orEmpty.isEmpty ? UUID().uuidString : dto.id.orEmpty,
+            title: dto.title.orEmpty,
+            details: dto.details.orEmpty
+        )
+    }
+}
+

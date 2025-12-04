@@ -42,6 +42,30 @@ let project = Project(
             ]
         ),
         .target(
+            name: "Cadastro",
+            destinations: .iOS,
+            product: .framework,
+            bundleId: "dev.tuist.Cadastro",
+            infoPlist: .default,
+            sources: ["Modules/Cadastro/Sources/**"],
+            dependencies: [
+                .package(product: "Alamofire"),
+                .package(product: "NeedleFoundation"),
+                .target(name: "Utility")
+            ]
+        ),
+        .target(
+            name: "CadastroDemo",
+            destinations: .iOS,
+            product: .app,
+            bundleId: "dev.tuist.CadastroDemo",
+            infoPlist: .default,
+            sources: ["Modules/Cadastro/Demo/**"],
+            dependencies: [
+                .target(name: "Cadastro")
+            ]
+        ),
+        .target(
             name: "Bolsa De Horas",
             destinations: .iOS,
             product: .app,
@@ -62,7 +86,8 @@ let project = Project(
                 .package(product: "Alamofire"),
                 .package(product: "NeedleFoundation"),
                 .target(name: "Utility"),
-                .target(name: "Anime")
+                .target(name: "Anime"),
+                .target(name: "Cadastro")
             ]
         ),
         .target(

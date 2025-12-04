@@ -1,0 +1,20 @@
+import Alamofire
+import NeedleFoundation
+
+public protocol API{{ name }}RepositoryBuilder {
+    var repository: {{ name }}RepositoryProtocol { get }
+}
+
+public protocol API{{ name }}RepositoryDependency: Dependency {
+    var api: Session { get }
+}
+
+public final class API{{ name }}RepositoryComponent:
+    Component<API{{ name }}RepositoryDependency>,
+    API{{ name }}RepositoryBuilder
+{
+    public var repository: {{ name }}RepositoryProtocol {
+        API{{ name }}RepositoryImpl(api: dependency.api)
+    }
+}
+

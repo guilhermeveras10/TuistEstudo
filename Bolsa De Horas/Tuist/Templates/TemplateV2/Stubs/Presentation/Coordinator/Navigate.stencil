@@ -1,0 +1,8 @@
+import Foundation
+
+public enum {{ name }}Navigate {
+    case dismiss
+    case goBack
+    case navigateToModule(URL)
+}
+

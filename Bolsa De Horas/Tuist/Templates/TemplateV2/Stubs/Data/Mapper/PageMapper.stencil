@@ -1,0 +1,17 @@
+import Foundation
+
+enum {{ name }}PageMapper {
+    static func map(input: {{ name }}ListDTO) -> {{ name }}Page {
+        let items = (input.data ?? []).map { {{ name }}Mapper.map(input: $0) }
+        let meta = input.meta
+
+        return .init(
+            items: items,
+            page: meta?.page ?? 1,
+            size: meta?.size ?? items.count,
+            totalData: meta?.totalData ?? items.count,
+            totalPage: meta?.totalPage ?? 1
+        )
+    }
+}
+

@@ -4,7 +4,7 @@ import Combine
 import NeedleFoundation
 import SwiftUI
 
-public final class AnimeComponent: BootstrapComponent,
+public final class CadastroComponent: BootstrapComponent,
     NavigationSubscriber
 {
     public var navigationBag = Set<AnyCancellable>()
@@ -21,9 +21,9 @@ public final class AnimeComponent: BootstrapComponent,
         }
     }
 
-    public var navigate: PassthroughSubject<AnimeNavigate, Never> {
+    public var navigate: PassthroughSubject<CadastroNavigate, Never> {
         shared {
-            PassthroughSubject<AnimeNavigate, Never>()
+            PassthroughSubject<CadastroNavigate, Never>()
         }
     }
 
@@ -33,28 +33,28 @@ public final class AnimeComponent: BootstrapComponent,
         }
     }
 
-    public var repositoryComponent: AnimeRepositoryBuilder {
+    public var repositoryComponent: CadastroRepositoryBuilder {
         shared {
-            AnimeRepositoryComponent(parent: self)
+            CadastroRepositoryComponent(parent: self)
         }
     }
 
-    public var useCaseComponent: AnimeUseCaseBuilder {
+    public var useCaseComponent: CadastroUseCaseBuilder {
         shared {
-            AnimeUseCaseComponent(parent: self)
+            CadastroUseCaseComponent(parent: self)
         }
     }
 
-    public var coordinatorComponent: AnimeCoordinatorBuilder {
-        AnimeCoordinatorComponent(parent: self)
+    public var coordinatorComponent: CadastroCoordinatorBuilder {
+        CadastroCoordinatorComponent(parent: self)
     }
 
-    public var factoryComponent: AnimeFactoryBuilder {
-        AnimeFactoryComponent(parent: self)
+    public var factoryComponent: CadastroFactoryBuilder {
+        CadastroFactoryComponent(parent: self)
     }
 
-    public var viewComponent: AnimeViewBuilder {
-        AnimeViewComponent(parent: self)
+    public var viewComponent: CadastroViewBuilder {
+        CadastroViewComponent(parent: self)
     }
 
     public var urlActionHandler: URLActionHandler {
@@ -63,7 +63,7 @@ public final class AnimeComponent: BootstrapComponent,
         }
     }
 
-    public var flowModel: AnimeFlowModel = .init()
+    public var flowModel: CadastroFlowModel = .init()
 
     // MARK: Injected parameters
 
@@ -82,8 +82,8 @@ public final class AnimeComponent: BootstrapComponent,
 
 // MARK: Handle screen navigation
 
-extension AnimeComponent {
-    public func start(_flowModel: AnimeFlowModel = .init()) {
+extension CadastroComponent {
+    public func start(_flowModel: CadastroFlowModel = .init()) {
         flowModel = _flowModel
         cancelNavigationSubscriptions()
         setupNavigationSubscriptions()

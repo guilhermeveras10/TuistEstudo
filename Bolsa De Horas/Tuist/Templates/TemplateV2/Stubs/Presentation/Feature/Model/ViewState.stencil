@@ -1,0 +1,10 @@
+import SwiftUI
+
+public final class {{ name }}sViewState: ObservableObject {
+    @Published var title: String
+
+    public init(title: String) {
+        self.title = title
+    }
+}
+

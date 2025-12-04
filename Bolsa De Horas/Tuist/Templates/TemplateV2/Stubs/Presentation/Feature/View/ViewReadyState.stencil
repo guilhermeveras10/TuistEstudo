@@ -1,0 +1,24 @@
+import SwiftUI
+
+extension {{ name }}sView {
+    @ViewBuilder
+    func readyState(viewState: [{{ name }}sViewState]?) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            if let viewState {
+                ForEach(Array(viewState.enumerated()), id: \.offset) { entry in
+                    HStack(spacing: 8) {
+                        Image(systemName: "checkmark.circle")
+                            .foregroundColor(.green)
+                        Text(entry.element.title)
+                            .foregroundColor(.primary)
+                        Spacer()
+                    }
+                }
+            } else {
+                Text("Nenhum item para exibir")
+                    .foregroundColor(.secondary)
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+}

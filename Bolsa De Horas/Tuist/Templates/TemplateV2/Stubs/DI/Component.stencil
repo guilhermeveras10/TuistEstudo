@@ -4,7 +4,7 @@ import Combine
 import NeedleFoundation
 import SwiftUI
 
-public final class AnimeComponent: BootstrapComponent,
+public final class {{ name }}Component: BootstrapComponent,
     NavigationSubscriber
 {
     public var navigationBag = Set<AnyCancellable>()
@@ -16,54 +16,42 @@ public final class AnimeComponent: BootstrapComponent,
     // MARK: Dependencies
 
     public var navigationController: UINavigationController {
-        shared {
-            _navigationController
-        }
+        shared { _navigationController }
     }
 
-    public var navigate: PassthroughSubject<AnimeNavigate, Never> {
-        shared {
-            PassthroughSubject<AnimeNavigate, Never>()
-        }
+    public var navigate: PassthroughSubject<{{ name }}Navigate, Never> {
+        shared { PassthroughSubject<{{ name }}Navigate, Never>() }
     }
 
     public var api: Session {
-        shared {
-            Session.default
-        }
+        shared { Session.default }
     }
 
-    public var repositoryComponent: AnimeRepositoryBuilder {
-        shared {
-            AnimeRepositoryComponent(parent: self)
-        }
+    public var repositoryComponent: {{ name }}RepositoryBuilder {
+        shared { {{ name }}RepositoryComponent(parent: self) }
     }
 
-    public var useCaseComponent: AnimeUseCaseBuilder {
-        shared {
-            AnimeUseCaseComponent(parent: self)
-        }
+    public var useCaseComponent: {{ name }}UseCaseBuilder {
+        shared { {{ name }}UseCaseComponent(parent: self) }
     }
 
-    public var coordinatorComponent: AnimeCoordinatorBuilder {
-        AnimeCoordinatorComponent(parent: self)
+    public var coordinatorComponent: {{ name }}CoordinatorBuilder {
+        {{ name }}CoordinatorComponent(parent: self)
     }
 
-    public var factoryComponent: AnimeFactoryBuilder {
-        AnimeFactoryComponent(parent: self)
+    public var factoryComponent: {{ name }}FactoryBuilder {
+        {{ name }}FactoryComponent(parent: self)
     }
 
-    public var viewComponent: AnimeViewBuilder {
-        AnimeViewComponent(parent: self)
+    public var viewComponent: {{ name }}ViewBuilder {
+        {{ name }}ViewComponent(parent: self)
     }
 
     public var urlActionHandler: URLActionHandler {
-        shared {
-            _urlActionHandler
-        }
+        shared { _urlActionHandler }
     }
 
-    public var flowModel: AnimeFlowModel = .init()
+    public var flowModel: {{ name }}FlowModel = .init()
 
     // MARK: Injected parameters
 
@@ -82,8 +70,8 @@ public final class AnimeComponent: BootstrapComponent,
 
 // MARK: Handle screen navigation
 
-extension AnimeComponent {
-    public func start(_flowModel: AnimeFlowModel = .init()) {
+extension {{ name }}Component {
+    public func start(_flowModel: {{ name }}FlowModel = .init()) {
         flowModel = _flowModel
         cancelNavigationSubscriptions()
         setupNavigationSubscriptions()

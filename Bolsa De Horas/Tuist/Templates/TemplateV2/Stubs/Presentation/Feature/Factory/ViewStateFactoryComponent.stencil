@@ -1,0 +1,17 @@
+import NeedleFoundation
+
+public protocol {{ name }}ViewStateFactoryBuilder {
+    var factory: {{ name }}sViewStateFactory { get }
+}
+
+public protocol {{ name }}ViewStateFactoryDependency: Dependency {}
+
+public final class {{ name }}ViewStateFactoryComponent:
+    Component<{{ name }}ViewStateFactoryDependency>,
+    {{ name }}ViewStateFactoryBuilder
+{
+    public var factory: {{ name }}sViewStateFactory {
+        {{ name }}sViewStateFactory()
+    }
+}
+

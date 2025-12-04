@@ -1,0 +1,33 @@
+import Combine
+import NeedleFoundation
+import SwiftUI
+
+public protocol {{ name }}sViewBuilder {
+    var view: any View { get }
+}
+
+public protocol {{ name }}sViewDependency: Dependency {
+    var navigate: PassthroughSubject<{{ name }}Navigate, Never> { get }
+    var flowModel: {{ name }}FlowModel { get }
+    var useCaseComponent: {{ name }}UseCaseBuilder { get }
+    var factoryComponent: {{ name }}FactoryBuilder { get }
+}
+
+final class {{ name }}sViewComponent: Component<
+{{ name }}sViewDependency
+>,
+{{ name }}sViewBuilder
+{
+    var view: any View {
+        {{ name }}sView(viewModel: viewModel)
+    }
+
+    var viewModel: {{ name }}sViewModelImpl {
+        .init(
+            navigate: dependency.navigate,
+            api{{ name }}UseCase: dependency.useCaseComponent.api{{ name }}UseCaseComponent.useCase,
+            viewStateFactory: dependency.factoryComponent.{{ name }}ViewStateFactoryComponent.factory,
+            flowModel: dependency.flowModel
+        )
+    }
+}

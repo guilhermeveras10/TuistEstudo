@@ -1,13 +1,19 @@
 import ProjectDescription
 
 let nameAttribute: Template.Attribute = .required("name")
+let actionAttribute: Template.Attribute = .optional("action")
 
 let template = Template(
     description: "Gera um módulo com arquitetura limpa",
     attributes: [
-        nameAttribute
+        nameAttribute,
+        actionAttribute
     ],
     items: [
+        .file(
+            path: "Modules/\(nameAttribute)/Sources/Module/\(nameAttribute)Module.swift",
+            templatePath: "Stubs/Module/Module.stencil"
+        ),
         .file(
             path: "Modules/\(nameAttribute)/Sources/Domain/Model/\(nameAttribute).swift",
             templatePath: "Stubs/Domain/Model/Response.stencil"
@@ -27,10 +33,6 @@ let template = Template(
         .file(
             path: "Modules/\(nameAttribute)/Sources/Domain/UseCase/Get\(nameAttribute)UseCase.swift",
             templatePath: "Stubs/Domain/UseCase/UseCaseImpl.stencil"
-        ),
-        .file(
-            path: "Modules/\(nameAttribute)/Sources/Support/URLActionHandler.swift",
-            templatePath: "Stubs/Support/URLActionHandler.stencil"
         ),
         .file(
             path: "Modules/\(nameAttribute)/Sources/Support/NavigationSubscriber.swift",

@@ -1,0 +1,11 @@
+import Utility
+
+protocol {{ name }}sViewModel: LifecycleViewModel {
+    var readyViewState: [{{ name }}sViewState]? { get }
+    var state: {{ name }}sViewModelImpl.State { get }
+
+    func back()
+    func close()
+    func openURL(_ deepLink: String)
+}
+

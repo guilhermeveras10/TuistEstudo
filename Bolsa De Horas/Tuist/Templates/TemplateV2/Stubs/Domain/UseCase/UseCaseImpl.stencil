@@ -1,0 +1,17 @@
+import Foundation
+import Combine
+
+public final class API{{ name }}UseCase {
+    private let repository: {{ name }}RepositoryProtocol
+
+    public init(repository: {{ name }}RepositoryProtocol) {
+        self.repository = repository
+    }
+
+    public func execute() -> Get{{ name }}Return {
+        repository.fetch{{ name }}s()
+            .map { $0 }
+            .eraseToAnyPublisher()
+    }
+}
+

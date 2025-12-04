@@ -1,0 +1,41 @@
+import Foundation
+
+/// Modelo base do domínio.
+public struct {{ name }}: Equatable {
+    public let id: String
+    public let title: String
+    public let details: String
+
+    public init(
+        id: String,
+        title: String,
+        details: String
+    ) {
+        self.id = id
+        self.title = title
+        self.details = details
+    }
+}
+
+/// Estrutura paginada de resultados.
+public struct {{ name }}Page: Equatable {
+    public let items: [{{ name }}]
+    public let page: Int
+    public let size: Int
+    public let totalData: Int
+    public let totalPage: Int
+
+    public init(
+        items: [{{ name }}],
+        page: Int,
+        size: Int,
+        totalData: Int,
+        totalPage: Int
+    ) {
+        self.items = items
+        self.page = page
+        self.size = size
+        self.totalData = totalData
+        self.totalPage = totalPage
+    }
+}

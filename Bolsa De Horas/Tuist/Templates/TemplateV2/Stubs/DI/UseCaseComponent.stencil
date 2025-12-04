@@ -1,0 +1,17 @@
+import NeedleFoundation
+
+public protocol {{ name }}UseCaseBuilder {
+    var api{{ name }}UseCaseComponent: API{{ name }}UseCaseBuilder { get }
+}
+
+public protocol {{ name }}UseCaseDependency: Dependency {}
+
+public final class {{ name }}UseCaseComponent:
+    Component<{{ name }}UseCaseDependency>,
+    {{ name }}UseCaseBuilder
+{
+    public var api{{ name }}UseCaseComponent: API{{ name }}UseCaseBuilder {
+        API{{ name }}UseCaseComponent(parent: self)
+    }
+}
+

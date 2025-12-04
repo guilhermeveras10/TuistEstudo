@@ -1,0 +1,17 @@
+import NeedleFoundation
+
+public protocol {{ name }}ViewBuilder {
+    var {{ name }}sView: {{ name }}sViewBuilder { get }
+}
+
+public protocol {{ name }}ViewDependency: Dependency {}
+
+public final class {{ name }}ViewComponent:
+    Component<{{ name }}ViewDependency>,
+    {{ name }}ViewBuilder
+{
+    public var {{ name }}sView: {{ name }}sViewBuilder {
+        {{ name }}sViewComponent(parent: self)
+    }
+}
+

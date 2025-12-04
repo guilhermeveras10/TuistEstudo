@@ -1,0 +1,8 @@
+import Combine
+
+public typealias Get{{ name }}Return = AnyPublisher<{{ name }}Page, Error>
+
+public protocol {{ name }}RepositoryProtocol {
+    func fetch{{ name }}s() -> Get{{ name }}Return
+}
+
