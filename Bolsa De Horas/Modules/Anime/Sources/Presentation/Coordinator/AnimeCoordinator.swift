@@ -4,19 +4,16 @@ import Foundation
 import SwiftUI
 import UIKit
 
-public final class HomeCoordinator {
+public final class AnimeCoordinator {
     let navigationController: UINavigationController
     let featureView: any View
-    let urlActionHandler: URLActionHandler
 
     public init(
         navigationController: UINavigationController,
-        featureView: any View,
-        urlActionHandler: URLActionHandler
+        featureView: any View
     ) {
         self.navigationController = navigationController
         self.featureView = featureView
-        self.urlActionHandler = urlActionHandler
     }
 
     public func start() {
@@ -31,7 +28,7 @@ public final class HomeCoordinator {
         )
     }
     
-    public func navigateToDeeplink(_ deepLink: URL) -> Bool {
-        urlActionHandler.handle(url: deepLink)
+    public func navigateToDeeplink(_ deepLink: URL) {
+        URLActionHandler.shared.handle(url: deepLink)
     }
 }

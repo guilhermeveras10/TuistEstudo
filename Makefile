@@ -9,7 +9,7 @@ NEEDLE_CLI         := needle
 NEEDLE_SOURCES_DIR := $(PROJECT_DIR)/Modules
 ACTION_IDENTIFIER  := $(PROJECT_DIR)/Modules/Utility/Sources/Classes/Enum/ActionIdentifier.swift
 
-.PHONY: install new-module bootstrap _needle-generate-module
+.PHONY: install new-module bootstrap needle _needle-generate-module
 
 ##
 ## make install
@@ -113,3 +113,14 @@ bootstrap: install
 	@echo "➡️ Gerando projeto com Tuist..."
 	cd "$(PROJECT_DIR)" && tuist generate
 	@echo "✅ Projeto gerado com sucesso."
+
+##
+## make needle module=Anime
+## - Gera o arquivo Needle para um módulo específico
+##
+needle:
+	@if [ -z "$(module)" ]; then \
+		echo "❌ Faltou o parâmetro 'module' (ex: module=Anime)"; \
+		exit 1; \
+	fi
+	$(MAKE) _needle-generate-module module=$(module)

@@ -6,7 +6,6 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    var navigatable: NavigationControllerNavigatable?
 
     func application(
         _: UIApplication,
@@ -23,22 +22,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         let window = UIWindow(windowScene: windowScene)
+        window.frame = windowScene.coordinateSpace.bounds
+        window.backgroundColor = .systemBackground
         self.window = window
 
-        let contentView = ContentView(startModule: startModule)
+        // Inicia o módulo direto para garantir full screen.
+        let module =
+            {{ name }}Module(
+                component: .init(
+                    _urlActionHandler: URLActionHandler.shared
+                )
+            )
+        let controller = module.startTransition(options: nil)
+        controller.modalPresentationStyle = .fullScreen
+        controller.view.backgroundColor = .systemBackground
+        controller.view.frame = window.bounds
 
-        let hostingController = UIHostingController(rootView: contentView)
-
-        let navigationController = UINavigationController(
-            rootViewController: hostingController
-        )
-        navigationController.navigationBar.prefersLargeTitles = false
-
-        navigatable = NavigationControllerNavigatable(
-            navigationController: navigationController
-        )
-
-        window.rootViewController = navigationController
+        window.rootViewController = controller
         window.makeKeyAndVisible()
     }
 
@@ -57,17 +57,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func startModule() {
-        if let navigatable = navigatable {
-            let module =
-                {{ name }}Module(
-                    component: .init(
-                        _urlActionHandler: URLActionHandler.shared
-                    )
+        let module =
+            {{ name }}Module(
+                component: .init(
+                    _urlActionHandler: URLActionHandler.shared
                 )
-            module.startTransition(
-                in: navigatable,
-                options: nil
             )
-        }
+
+        let controller = module.startTransition(options: nil)
+        controller.modalPresentationStyle = .fullScreen
+        controller.view.backgroundColor = .systemBackground
+        window?.rootViewController = controller
+        window?.makeKeyAndVisible()
     }
 }

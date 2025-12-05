@@ -57,25 +57,12 @@ public final class AnimeComponent: BootstrapComponent,
         AnimeViewComponent(parent: self)
     }
 
-    public var urlActionHandler: URLActionHandler {
-        shared {
-            _urlActionHandler
-        }
-    }
-
     public var flowModel: AnimeFlowModel = .init()
 
-    // MARK: Injected parameters
-
-    private let _urlActionHandler: URLActionHandler
-
-    public init(
-        _urlActionHandler: URLActionHandler
-    ) {
+    public override init() {
         _navigationController.modalPresentationStyle = .fullScreen
         _navigationController.view.backgroundColor = .systemBackground
         registerProviderFactories()
-        self._urlActionHandler = _urlActionHandler
         super.init()
     }
 }

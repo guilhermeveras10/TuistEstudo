@@ -7,6 +7,7 @@ public class HostingControllerNoSafeArea<Content>: UIHostingController<AnyView>
     public init(rootView: Content) {
         super.init(rootView: AnyView(rootView))
         disableSafeArea()
+        view.backgroundColor = .systemBackground
     }
 
     @available(*, unavailable)

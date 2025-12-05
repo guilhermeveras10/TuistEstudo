@@ -1,6 +1,7 @@
 import Utility
 import NeedleFoundation
 import Foundation
+import UIKit
 
 public final class {{ name }}Module {
     /// Identificador de action específico deste módulo (ex.: usado em deeplinks).
@@ -28,20 +29,11 @@ extension {{ name }}Module: FeatureModule {
     }
 
     public func startTransition(
-        in navigation: Navigatable?,
         options _: [URLQueryItem]?
-    ) {
+    ) -> UIViewController {
         rootComponent.coordinatorComponent.coordinator.start()
         rootComponent.start()
 
-        let view = rootComponent.navigationController.uiViewController
-
-        navigation?.present(
-            view,
-            animated: true,
-            options: [],
-            presentationStyle: .currentContext,
-            completion: nil
-        )
+        return rootComponent.navigationController
     }
 }

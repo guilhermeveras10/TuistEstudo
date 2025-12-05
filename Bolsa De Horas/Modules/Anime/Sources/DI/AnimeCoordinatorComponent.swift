@@ -4,24 +4,22 @@ import SwiftUI
 import UIKit
 
 public protocol AnimeCoordinatorBuilder {
-    var coordinator: HomeCoordinator { get }
+    var coordinator: AnimeCoordinator { get }
 }
 
 public protocol AnimeCoordinatorDependency: Dependency {
     var navigationController: UINavigationController { get }
     var viewComponent: AnimeViewBuilder { get }
-    var urlActionHandler: URLActionHandler { get }
 }
 
 public final class AnimeCoordinatorComponent:
     Component<AnimeCoordinatorDependency>,
     AnimeCoordinatorBuilder
 {
-    public var coordinator: HomeCoordinator {
+    public var coordinator: AnimeCoordinator {
         .init(
             navigationController: dependency.navigationController,
-            featureView: dependency.viewComponent.animesView.view,
-            urlActionHandler: dependency.urlActionHandler
+            featureView: dependency.viewComponent.animesView.view
         )
     }
 }

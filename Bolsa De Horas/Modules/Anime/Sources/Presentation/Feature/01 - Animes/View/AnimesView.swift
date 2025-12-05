@@ -15,7 +15,7 @@ struct AnimesView<T: AnimesViewModel>: View {
                 errorState()
             }
         }
-        Spacer()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color(.systemBackground).ignoresSafeArea())
     }
 }
-

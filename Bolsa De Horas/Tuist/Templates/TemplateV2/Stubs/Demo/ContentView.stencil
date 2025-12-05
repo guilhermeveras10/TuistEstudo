@@ -4,17 +4,17 @@ struct ContentView: View {
     let startModule: () -> Void
 
     var body: some View {
-        NavigationView {
-            VStack(spacing: 16) {
+        ZStack {
+            Color(.systemBackground).ignoresSafeArea()
+            VStack(spacing: 24) {
                 Text("Demo {{ name }}")
                     .font(.title2)
                 Button("Iniciar módulo", action: startModule)
                     .buttonStyle(.borderedProminent)
-                Spacer()
             }
-            .padding()
-            .navigationBarTitle("DEMO", displayMode: .inline)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
+        .ignoresSafeArea()
     }
 }
 

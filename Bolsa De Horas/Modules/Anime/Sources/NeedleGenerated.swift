@@ -43,9 +43,6 @@ private class AnimeCoordinatorDependency6634473ab6096586edceProvider: AnimeCoord
     var viewComponent: AnimeViewBuilder {
         return animeComponent.viewComponent
     }
-    var urlActionHandler: URLActionHandler {
-        return animeComponent.urlActionHandler
-    }
     private let animeComponent: AnimeComponent
     init(animeComponent: AnimeComponent) {
         self.animeComponent = animeComponent
@@ -159,7 +156,6 @@ extension AnimeCoordinatorComponent: NeedleFoundation.Registration {
     public func registerItems() {
         keyPathToName[\AnimeCoordinatorDependency.navigationController] = "navigationController-UINavigationController"
         keyPathToName[\AnimeCoordinatorDependency.viewComponent] = "viewComponent-AnimeViewBuilder"
-        keyPathToName[\AnimeCoordinatorDependency.urlActionHandler] = "urlActionHandler-URLActionHandler"
     }
 }
 extension AnimeComponent: NeedleFoundation.Registration {
@@ -173,7 +169,6 @@ extension AnimeComponent: NeedleFoundation.Registration {
         localTable["coordinatorComponent-AnimeCoordinatorBuilder"] = { [unowned self] in self.coordinatorComponent as Any }
         localTable["factoryComponent-AnimeFactoryBuilder"] = { [unowned self] in self.factoryComponent as Any }
         localTable["viewComponent-AnimeViewBuilder"] = { [unowned self] in self.viewComponent as Any }
-        localTable["urlActionHandler-URLActionHandler"] = { [unowned self] in self.urlActionHandler as Any }
         localTable["flowModel-AnimeFlowModel"] = { [unowned self] in self.flowModel as Any }
     }
 }
