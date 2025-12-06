@@ -3,7 +3,6 @@ import ProjectDescription
 let project = Project(
     name: "Anime",
     packages: [
-        .package(url: "https://github.com/Alamofire/Alamofire.git", from: "5.9.1"),
         .package(url: "https://github.com/uber/needle.git", from: "0.24.0")
     ],
     targets: [
@@ -15,9 +14,9 @@ let project = Project(
             infoPlist: .default,
             sources: ["Sources/**"],
             dependencies: [
-                .package(product: "Alamofire"),
                 .package(product: "NeedleFoundation"),
-                .project(target: "Utility", path: "../Utility")
+                .project(target: "Utility", path: "../Utility"),
+                .project(target: "NetworkKit", path: "../Network")
             ]
         ),
         .target(

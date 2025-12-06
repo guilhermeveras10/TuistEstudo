@@ -3,10 +3,18 @@ import ProjectDescription
 let project = Project(
     name: "Bolsa De Horas",
     packages: [
-        .package(url: "https://github.com/Alamofire/Alamofire.git", from: "5.9.1"),
         .package(url: "https://github.com/uber/needle.git", from: "0.24.0"),
     ],
     targets: [
+        .target(
+            name: "NetworkKit",
+            destinations: .iOS,
+            product: .framework,
+            bundleId: "dev.tuist.NetworkKit",
+            infoPlist: .default,
+            sources: ["Modules/Network/Sources/**"],
+            dependencies: []
+        ),
         .target(
             name: "Utility",
             destinations: .iOS,
@@ -25,9 +33,9 @@ let project = Project(
             infoPlist: .default,
             sources: ["Modules/Anime/Sources/**"],
             dependencies: [
-                .package(product: "Alamofire"),
                 .package(product: "NeedleFoundation"),
-                .target(name: "Utility")
+                .target(name: "Utility"),
+                .target(name: "NetworkKit")
             ]
         ),
         .target(
@@ -59,9 +67,9 @@ let project = Project(
                 "Bolsa De Horas/Resources"
             ],
             dependencies: [
-                .package(product: "Alamofire"),
                 .package(product: "NeedleFoundation"),
                 .target(name: "Utility"),
+                .target(name: "NetworkKit"),
                 .target(name: "Anime")
             ]
         ),

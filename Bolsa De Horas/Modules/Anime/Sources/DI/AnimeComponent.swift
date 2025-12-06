@@ -1,7 +1,7 @@
-import Alamofire
 import Utility
 import Combine
 import NeedleFoundation
+import NetworkKit
 import SwiftUI
 
 public final class AnimeComponent: BootstrapComponent,
@@ -27,9 +27,9 @@ public final class AnimeComponent: BootstrapComponent,
         }
     }
 
-    public var api: Session {
+    public var networkClient: NetworkClientProtocol {
         shared {
-            Session.default
+            NetworkClient()
         }
     }
 

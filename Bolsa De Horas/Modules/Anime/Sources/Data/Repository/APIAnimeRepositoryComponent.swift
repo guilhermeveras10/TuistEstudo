@@ -1,13 +1,13 @@
 import Foundation
 import NeedleFoundation
-import Alamofire
+import NetworkKit
 
 public protocol APIAnimeRepositoryBuilder {
     var repository: AnimeRepositoryProtocol { get }
 }
 
 public protocol APIAnimeRepositoryDependency: Dependency {
-    var api: Session { get }
+    var networkClient: NetworkClientProtocol { get }
 }
 
 public final class APIAnimeRepositoryComponent:
@@ -15,6 +15,6 @@ public final class APIAnimeRepositoryComponent:
     APIAnimeRepositoryBuilder
 {
     public var repository: AnimeRepositoryProtocol {
-        APIAnimeRepositoryImpl(api: dependency.api)
+        APIAnimeRepositoryImpl(networkClient: dependency.networkClient)
     }
 }

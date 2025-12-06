@@ -1,9 +1,9 @@
 
 
-import Alamofire
 import Combine
 import Foundation
 import NeedleFoundation
+import NetworkKit
 import SwiftUI
 import UIKit
 import Utility
@@ -86,8 +86,8 @@ private func factoryd86bd7767d2f06fa085ae3b0c44298fc1c149afb(_ component: Needle
     return AnimeViewDependency5a32d0a46e78e277834aProvider()
 }
 private class APIAnimeRepositoryDependency19f45f7c4ca1e3d62e6dProvider: APIAnimeRepositoryDependency {
-    var api: Session {
-        return animeComponent.api
+    var networkClient: NetworkClientProtocol {
+        return animeComponent.networkClient
     }
     private let animeComponent: AnimeComponent
     init(animeComponent: AnimeComponent) {
@@ -163,7 +163,7 @@ extension AnimeComponent: NeedleFoundation.Registration {
 
         localTable["navigationController-UINavigationController"] = { [unowned self] in self.navigationController as Any }
         localTable["navigate-PassthroughSubject<AnimeNavigate, Never>"] = { [unowned self] in self.navigate as Any }
-        localTable["api-Session"] = { [unowned self] in self.api as Any }
+        localTable["networkClient-NetworkClientProtocol"] = { [unowned self] in self.networkClient as Any }
         localTable["repositoryComponent-AnimeRepositoryBuilder"] = { [unowned self] in self.repositoryComponent as Any }
         localTable["useCaseComponent-AnimeUseCaseBuilder"] = { [unowned self] in self.useCaseComponent as Any }
         localTable["coordinatorComponent-AnimeCoordinatorBuilder"] = { [unowned self] in self.coordinatorComponent as Any }
@@ -192,7 +192,7 @@ extension AnimeViewComponent: NeedleFoundation.Registration {
 }
 extension APIAnimeRepositoryComponent: NeedleFoundation.Registration {
     public func registerItems() {
-        keyPathToName[\APIAnimeRepositoryDependency.api] = "api-Session"
+        keyPathToName[\APIAnimeRepositoryDependency.networkClient] = "networkClient-NetworkClientProtocol"
     }
 }
 extension APIAnimeUseCaseComponent: NeedleFoundation.Registration {
