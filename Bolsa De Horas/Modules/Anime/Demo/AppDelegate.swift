@@ -23,12 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         window.backgroundColor = .systemBackground
 
-        // Inicia o módulo direto para garantir full screen sem wrappers SwiftUI.
-        let module = AnimeModule(
-            component: .init(
-                _urlActionHandler: URLActionHandler.shared
-            )
-        )
+        let module = AnimeModule(component: .init())
         let controller = module.startTransition(options: nil)
         controller.modalPresentationStyle = .fullScreen
         controller.view.backgroundColor = .systemBackground

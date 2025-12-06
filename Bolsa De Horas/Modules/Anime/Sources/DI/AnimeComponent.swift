@@ -60,8 +60,6 @@ public final class AnimeComponent: BootstrapComponent,
     public var flowModel: AnimeFlowModel = .init()
 
     public override init() {
-        _navigationController.modalPresentationStyle = .fullScreen
-        _navigationController.view.backgroundColor = .systemBackground
         registerProviderFactories()
         super.init()
     }

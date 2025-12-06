@@ -31,15 +31,10 @@ public struct ContentView: View {
 /// Wrapper SwiftUI para exibir o módulo Anime em tela cheia.
 struct AnimeModuleContainer: UIViewControllerRepresentable {
     func makeUIViewController(context _: Context) -> UIViewController {
-        let module = AnimeModule(
-            component: .init(
-                _urlActionHandler: URLActionHandler.shared
-            )
-        )
+        let module = AnimeModule(component: .init())
         let controller = module.startTransition(options: nil)
         controller.modalPresentationStyle = .fullScreen
         controller.view.backgroundColor = .systemBackground
-        controller.view.frame = UIScreen.main.bounds
         return controller
     }
 
