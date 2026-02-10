@@ -1,0 +1,11 @@
+import Foundation
+
+// MARK: FlowModel - adapte campos conforme o fluxo
+public final class {{ name }}FlowModel {
+    public var selected: {{ name }}?
+
+    public init(selected: {{ name }}? = nil) {
+        self.selected = selected
+    }
+}
+

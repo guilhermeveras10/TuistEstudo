@@ -1,0 +1,14 @@
+import Foundation
+
+public struct {{ name }}ListDTO: Decodable {
+    public let data: [{{ name }}DTO]?
+    public let meta: MetaDTO?
+}
+
+public struct MetaDTO: Decodable {
+    public let page: Int?
+    public let size: Int?
+    public let totalData: Int?
+    public let totalPage: Int?
+}
+

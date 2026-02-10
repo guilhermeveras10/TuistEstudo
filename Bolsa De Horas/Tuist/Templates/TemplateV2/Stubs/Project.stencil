@@ -1,0 +1,36 @@
+import ProjectDescription
+
+let project = Project(
+    name: "{{ name }}",
+    packages: [
+        .package(url: "https://github.com/Alamofire/Alamofire.git", from: "5.9.1"),
+        .package(url: "https://github.com/uber/needle.git", from: "0.24.0")
+    ],
+    targets: [
+        .target(
+            name: "{{ name }}",
+            destinations: .iOS,
+            product: .framework,
+            bundleId: "dev.tuist.{{ name }}",
+            infoPlist: .default,
+            sources: ["Sources/**"],
+            dependencies: [
+                .package(product: "Alamofire"),
+                .package(product: "NeedleFoundation"),
+                .project(target: "Utility", path: "../Utility")
+            ]
+        ),
+        .target(
+            name: "{{ name }}Demo",
+            destinations: .iOS,
+            product: .app,
+            bundleId: "dev.tuist.{{ name }}Demo",
+            infoPlist: .default,
+            sources: ["Demo/**"],
+            dependencies: [
+                .target(name: "{{ name }}")
+            ]
+        ),
+    ]
+)
+

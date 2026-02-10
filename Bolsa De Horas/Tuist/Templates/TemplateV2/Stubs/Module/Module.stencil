@@ -1,0 +1,43 @@
+import Utility
+import NeedleFoundation
+import Foundation
+import UIKit
+
+public final class {{ name }}Module {
+    /// Identificador de action específico deste módulo (ex.: usado em deeplinks).
+    public var identifierAction: String {
+        ActionIdentifier.action{{ name }}.rawValue
+    }
+
+    public let rootComponent: {{ name }}Component
+
+    public init(
+        component: {{ name }}Component
+    ) {
+        rootComponent = component
+    }
+}
+
+extension {{ name }}Module: FeatureModule {
+    public func isTransitionAvailable(for key: String) -> Bool {
+        switch key {
+        case ActionIdentifier.action{{ name }}.rawValue:
+            return true
+        default:
+            return false
+        }
+    }
+
+    public func startTransition(
+        options _: [URLQueryItem]?
+    ) -> UIViewController {
+        rootComponent.coordinatorComponent.coordinator.start()
+        rootComponent.start()
+
+        let controller = rootComponent.navigationController
+        controller.modalPresentationStyle = .fullScreen
+        controller.view.backgroundColor = .systemBackground
+        controller.view.frame = UIScreen.main.bounds
+        return controller
+    }
+}

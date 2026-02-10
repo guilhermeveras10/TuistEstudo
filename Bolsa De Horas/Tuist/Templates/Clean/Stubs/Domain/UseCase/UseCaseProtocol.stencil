@@ -1,0 +1,3 @@
+public protocol {{ name }}UseCaseProtocol {
+    func execute() -> Get{{ name }}Return
+}

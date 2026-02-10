@@ -1,5 +1,5 @@
 {
-  "originHash" : "20a7cbb369443ee345eb3913d353d9d046989d39d7167ef0344016225e9a156a",
+  "originHash" : "3d5168924a73fb9c3767541b602accf4dd4dc24fc2b9f7b76087ab875f7e754c",
   "pins" : [
     {
       "identity" : "alamofire",
@@ -8,6 +8,15 @@
       "state" : {
         "revision" : "513364f870f6bfc468f9d2ff0a95caccc10044c5",
         "version" : "5.10.2"
+      }
+    },
+    {
+      "identity" : "needle",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/uber/needle.git",
+      "state" : {
+        "revision" : "69f7a889d2736f2621c6083ac29e0a75d158f249",
+        "version" : "0.25.1"
       }
     }
   ],

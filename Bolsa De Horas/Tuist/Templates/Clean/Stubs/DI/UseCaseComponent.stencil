@@ -1,0 +1,18 @@
+import NeedleFoundation
+
+public protocol {{ name }}UseCaseBuilder {
+    var useCase: {{ name }}UseCaseProtocol { get }
+}
+
+public protocol {{ name }}UseCaseDependency: Dependency {
+    var repository: {{ name }}RepositoryProtocol { get }
+}
+
+public final class {{ name }}UseCaseComponent:
+    Component<{{ name }}UseCaseDependency>,
+    {{ name }}UseCaseBuilder
+{
+    public var useCase: {{ name }}UseCaseProtocol {
+        Get{{ name }}UseCase(repository: dependency.repository)
+    }
+}

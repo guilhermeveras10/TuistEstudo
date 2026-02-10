@@ -1,0 +1,113 @@
+import Alamofire
+import Combine
+import NeedleFoundation
+import SwiftUI
+
+public final class {{ name }}Component: BootstrapComponent,
+    NavigationSubscriber
+{
+    public var navigationBag = Set<AnyCancellable>()
+
+    // MARK: Navigation internal dependencies
+
+    public var _navigationController = UINavigationController()
+
+    // MARK: Dependencies
+
+    public var navigationController: UINavigationController {
+        shared {
+            _navigationController
+        }
+    }
+
+    public var navigate: PassthroughSubject<{{ name }}Navigate, Never> {
+        shared {
+            PassthroughSubject<{{ name }}Navigate, Never>()
+        }
+    }
+
+    public var api: Session {
+        shared {
+            Session.default
+        }
+    }
+
+    public var repositoryComponent: {{ name }}RepositoryBuilder {
+        shared {
+            {{ name }}RepositoryComponent(parent: self)
+        }
+    }
+
+    public var useCaseComponent: {{ name }}UseCaseBuilder {
+        shared {
+            {{ name }}UseCaseComponent(parent: self)
+        }
+    }
+
+    public var coordinatorComponent: {{ name }}CoordinatorBuilder {
+        {{ name }}CoordinatorComponent(parent: self)
+    }
+
+    public var factoryComponent: {{ name }}FactoryBuilder {
+        {{ name }}FactoryComponent(parent: self)
+    }
+
+    public var viewComponent: {{ name }}ViewBuilder {
+        {{ name }}ViewComponent(parent: self)
+    }
+
+    public var repository: {{ name }}RepositoryProtocol {
+        repositoryComponent.repository
+    }
+
+    public var useCase: {{ name }}UseCaseProtocol {
+        useCaseComponent.useCase
+    }
+
+    public var viewModel: ViewModel {
+        factoryComponent.viewModel
+    }
+
+    public var featureView: AnyView {
+        viewComponent.featureView
+    }
+
+    public var flowModel: {{ name }}FlowModel = .init()
+
+    // MARK: Injected parameters
+
+    public init() {
+        registerProviderFactories()
+        super.init()
+    }
+}
+
+// MARK: Handle screen navigation
+
+extension {{ name }}Component {
+    public func start(_flowModel: {{ name }}FlowModel = .init()) {
+        flowModel = _flowModel
+        cancelNavigationSubscriptions()
+        setupNavigationSubscriptions()
+    }
+
+    public func setupNavigationSubscriptions() {
+        navigate.sink { navigate in
+            switch navigate {
+            case .dismiss:
+                self.coordinatorComponent.coordinator.navigationController
+                    .dismiss(animated: true)
+            case .goBack:
+                self.coordinatorComponent.coordinator.navigationController
+                    .popViewController(animated: true)
+            case .navigateToModule(let module):
+                self.coordinatorComponent.coordinator.navigateToDeeplink(module)
+            }
+        }.store(in: &navigationBag)
+    }
+
+    public func cancelNavigationSubscriptions() {
+        navigationBag.forEach { $0.cancel() }
+        navigationBag.removeAll()
+    }
+}

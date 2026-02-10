@@ -1,0 +1,13 @@
+import ActionHandler
+import SwiftUI
+
+public enum {{ name }}Builder {
+    public static func make(
+        _urlActionHandler: URLActionHandler = .shared,
+        flowModel: {{ name }}FlowModel = .init()
+    ) -> some View {
+        let component = {{ name }}Component(_urlActionHandler: _urlActionHandler)
+        component.start(_flowModel: flowModel)
+        return component.featureView
+    }
+}

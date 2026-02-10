@@ -16,5 +16,6 @@ let package = Package(
     name: "Bolsa De Horas",
     dependencies: [
         .package(url: "https://github.com/Alamofire/Alamofire.git", from: "5.9.1"),
+        .package(url: "https://github.com/uber/needle.git", from: "0.24.0"),
     ]
 )

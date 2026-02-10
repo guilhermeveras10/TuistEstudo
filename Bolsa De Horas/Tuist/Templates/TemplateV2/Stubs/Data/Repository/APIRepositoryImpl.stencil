@@ -1,0 +1,27 @@
+import Foundation
+import Combine
+import Alamofire
+
+public final class API{{ name }}RepositoryImpl: {{ name }}RepositoryProtocol {
+    private let api: Session
+
+    public init(api: Session) {
+        self.api = api
+    }
+
+    public func fetch{{ name }}s() -> Get{{ name }}Return {
+        // Exemplo com dados mockados. Ajuste para integrar com sua API.
+        let mock = {{ name }}ListDTO(
+            data: [
+                .init(id: UUID().uuidString, title: "{{ name }} exemplo", details: "Descrição do {{ name }}")
+            ],
+            meta: .init(page: 1, size: 1, totalData: 1, totalPage: 1)
+        )
+
+        return Just(mock)
+            .map { dto in {{ name }}PageMapper.map(input: dto) }
+            .setFailureType(to: Error.self)
+            .eraseToAnyPublisher()
+    }
+}
+

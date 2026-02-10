@@ -1,0 +1,34 @@
+import ProjectDescription
+
+let project = Project(
+    name: "Anime",
+    packages: [
+        .package(url: "https://github.com/uber/needle.git", from: "0.24.0")
+    ],
+    targets: [
+        .target(
+            name: "Anime",
+            destinations: .iOS,
+            product: .framework,
+            bundleId: "dev.tuist.Anime",
+            infoPlist: .default,
+            sources: ["Sources/**"],
+            dependencies: [
+                .package(product: "NeedleFoundation"),
+                .project(target: "Utility", path: "../Utility"),
+                .project(target: "NetworkKit", path: "../Network")
+            ]
+        ),
+        .target(
+            name: "AnimeDemo",
+            destinations: .iOS,
+            product: .app,
+            bundleId: "dev.tuist.AnimeDemo",
+            infoPlist: .default,
+            sources: ["Demo/**"],
+            dependencies: [
+                .target(name: "Anime")
+            ]
+        ),
+    ]
+)

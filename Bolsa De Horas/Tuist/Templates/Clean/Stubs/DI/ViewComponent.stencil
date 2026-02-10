@@ -1,0 +1,19 @@
+import NeedleFoundation
+import SwiftUI
+
+public protocol {{ name }}ViewBuilder {
+    var featureView: AnyView { get }
+}
+
+public protocol {{ name }}ViewDependency: Dependency {
+    var viewModel: ViewModel { get }
+}
+
+public final class {{ name }}ViewComponent:
+    Component<{{ name }}ViewDependency>,
+    {{ name }}ViewBuilder
+{
+    public var featureView: AnyView {
+        AnyView({{ name }}View(viewModel: dependency.viewModel))
+    }
+}

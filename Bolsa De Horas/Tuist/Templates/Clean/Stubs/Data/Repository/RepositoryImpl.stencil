@@ -1,0 +1,23 @@
+import Foundation
+import Combine
+import Alamofire
+
+public final class {{ name }}RepositoryImpl: {{ name }}RepositoryProtocol {
+    private let api: Session
+    private let mapper = {{ name }}Mapper()
+    private let endpoint = URL(string: "https://jsonplaceholder.typicode.com/todos/1")!
+
+    public init(api: Session) {
+        self.api = api
+    }
+
+    public func get{{ name }}() -> Get{{ name }}Return {
+        return api
+            .request(endpoint, method: .get)
+            .validate()
+            .publishDecodable(type: {{ name }}DTO.self)
+            .value()
+            .map(mapper.map)
+            .eraseToAnyPublisher()
+    }
+}

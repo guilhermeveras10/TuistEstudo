@@ -1,0 +1,10 @@
+import Foundation
+
+public struct {{ name }}: Equatable {
+    public let id: Int
+    // TODO: adicionar propriedades de domínio específicas
+
+    public static func == (lhs: {{ name }}, rhs: {{ name }}) -> Bool {
+        lhs.id == rhs.id
+    }
+}

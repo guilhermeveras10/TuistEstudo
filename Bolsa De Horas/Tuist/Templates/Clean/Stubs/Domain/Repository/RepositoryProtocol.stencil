@@ -1,0 +1,9 @@
+import Alamofire
+import Combine
+
+public typealias Get{{ name }}Return = AnyPublisher<{{ name }}, AFError>
+
+// MARK: {{ name }}RepositoryProtocol - adicione mais funções conforme necessário
+public protocol {{ name }}RepositoryProtocol {
+    func get{{ name }}() -> Get{{ name }}Return
+}

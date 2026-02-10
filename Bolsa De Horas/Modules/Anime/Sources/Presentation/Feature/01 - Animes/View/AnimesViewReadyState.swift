@@ -1,0 +1,22 @@
+import SwiftUI
+
+extension AnimesView {
+    func readyState() -> some View {
+        let items = viewModel.readyViewState ?? []
+        return List {
+            ForEach(items, id: \.animeName) { item in
+                HStack(spacing: 12) {
+                    // Placeholder de thumbnail pode ser adicionado depois
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(item.animeName)
+                            .font(.headline)
+                            .foregroundColor(.primary)
+                    }
+                    Spacer()
+                }
+                .contentShape(Rectangle())
+            }
+        }
+        .listStyle(.plain)
+    }
+}
